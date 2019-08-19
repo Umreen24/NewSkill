@@ -107,7 +107,7 @@ courseSchema.pre('save', function(next) {
 courseSchema.pre(/^find/, function(next) {
   // courseSchema.pre('find', function(next) {
   this.find({ secretCourse: { $ne: true } });
-  this.start = Date.now();
+  this.start = Date.now(); 
   next();
 });
 
