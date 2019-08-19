@@ -62,7 +62,7 @@ const courseSchema = new mongoose.Schema(
     },
     imageCover: {
       type: String,
-      require: [true, 'A tour must have a cover image']
+      require: [true, 'A course must have a cover image']
     },
     images: [String],
     createdAt: {
@@ -71,7 +71,7 @@ const courseSchema = new mongoose.Schema(
       select: false
     },
     startDates: [Date],
-    secretTour: {
+    secretCourse: {
       type: Boolean,
       default: false,
       select: false
