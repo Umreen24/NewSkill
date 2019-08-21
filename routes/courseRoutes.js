@@ -20,6 +20,11 @@ router
 router
   .route("/:id")
   .get(courseController.getCourse)
+  .patch(
+    courseController.updateCourse,
+  courseController.resizeCourseImages,
+  )
+  .delete(courseController.deleteCourse);
   .patch(courseController.updateCourse)
   .delete(authController.protect, authController.restrictTo('admin', 'instructor'), courseController.deleteCourse);
 
