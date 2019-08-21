@@ -23,11 +23,11 @@ userRouter
 userRouter
   .route('/:id')
   .get(userController.getUser)
-  .patch(userController,updateUser)
+  .patch(userController.updateUser)
   .delete(userController.deleteUser);
 
 // router for photo-upload
-  router.patch(
+  userRouter.patch(
     '/updateMe',
     userController.resizeUserPhoto,
     userController.uploadUserPhoto,
