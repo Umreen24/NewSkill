@@ -32,6 +32,10 @@ const courseSchema = new mongoose.Schema(
         ]
       }
     },
+    address: {
+      type: String,
+      required: [true, 'A course must have an address']
+    },
     slug: String,
     duration: {
       type: Number,
