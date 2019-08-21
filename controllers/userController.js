@@ -1,6 +1,6 @@
+const User = require('./../models/userModel');
 const catchAsync = require('../utils/catchAsync');
-
-
+const AppError = require('../utils/appError');
 const sharp = require('sharp');
 const multer = require('multer');
 
@@ -18,9 +18,8 @@ const multer = require('multer');
 
 const multerStorage = multer.memoryStorage();
 
-
-const multerFilter = (req, file, cb)=>{
-  if(file.mimetype.startsWith('image')){
+const multerFilter = (req, file, cb) => {
+  if(file.mimetype.startsWith('image')) {
     cb(null, true)
   }else{
     cb(new AppError('Not an image! please upload only images.',400), false);
@@ -33,7 +32,7 @@ const upload = multer({
 
 });
 
-exports.uploadUsersPhoto = upload.single('photo')
+exports.uploadUserPhoto = upload.single('photo')
 
 exports.resizeUserPhoto = catchAsync( async(req, res, next) => {
 if(!req.file) return next();
@@ -48,16 +47,12 @@ await sharp(req.file.buffer)
 
 next();
 
-
 });
 
-const filteredBody = filterObj(req.body,'name','email');
-if(req.file) filteredBody.photo =req.file.filename;
+// const filteredBody = filterObj(req.body,'name','email');
+// if(req.file) filteredBody.photo =req.file.filename;
 
-exports.getAllUsers = (req, res) => {
-const User = require('./../models/userModel');
-const catchAsync = require('../utils/catchAsync');
-const AppError = require('../utils/appError');
+// exports.getAllUsers = (req, res) => {
 
 const filterObj = (obj, ...allowedFields) => {
   const newObj = {};

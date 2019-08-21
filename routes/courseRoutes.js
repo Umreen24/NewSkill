@@ -24,7 +24,7 @@ router
     courseController.updateCourse,
   courseController.resizeCourseImages,
   )
-  .delete(courseController.deleteCourse);
+  .delete(courseController.deleteCourse)
   .patch(courseController.updateCourse)
   .delete(authController.protect, authController.restrictTo('admin', 'instructor'), courseController.deleteCourse);
 
