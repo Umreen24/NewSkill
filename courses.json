@@ -1,0 +1,282 @@
+[
+
+    {
+        "name": "Phil's Photography",
+        "category": "photography",
+        "address": "1200 Richmond Rd.",
+        "duration": 1.5,
+        "maxGroupSize": 10,
+        "difficulty": "easy",
+        "ratingsAverage": 4.5,
+        "price": 30,
+        "summary": "Learn the basics of photography to improve the quality of your photos.",
+        "description": "We start by learning the basics & science of photograpy and the mechanics of your camera. How to shoot for certain light and long exposure. We expolore outside to shoot still photos and finish how time motion photos.",
+        "startDates": "09/01/2019"
+    },
+
+    {
+        "name": "CPR/First Aid",
+        "category": "health",
+        "address": "1394 Westpark Dr.",
+        "duration": 3,
+        "maxGroupSize": 15,
+        "difficulty": "easy",
+        "ratingsAverage": 4.5,
+        "price": 50,
+        "summary": "We provide the nesscery technique to safe life.",
+        "description": "The skills covered in this course include; choking relief, in adult and children, and what to do in a sudden cardiac arrest. This course is good for fitness coaches, teachers, and school staff.",
+        "startDates": "09/02/2019"
+    },
+
+    {
+        "name": "Baking Bread",
+        "category": "cooking",
+        "address": "5000 Hilcroft St.",
+        "duration": 2,
+        "maxGroupSize": 5,
+        "difficulty": "easy",
+        "ratingsAverage": 4.5,
+        "price": 20,
+        "summary": "Baking bread for beginners.",
+        "description": "This hands-on class will walk you through making your own loaf of bread-- no frills, no mysteries, no tricks.",
+        "startDates": "09/03/2019"
+    },
+
+    {
+        "name": "Welding",
+        "category": "workshop",
+        "address": "3001 Harwin St.",
+        "duration": 1.5,
+        "maxGroupSize": 5,
+        "difficulty": "medium",
+        "ratingsAverage": 4.7,
+        "price": 80,
+        "summary": "Learn different techniques of welding.",
+        "description": "You will be provided with the equipment necessary to practice a few basic welds until you feel that you have grasped each concept. You will learn the steps needed before a weld can be done. I bring 10 years of experience with a plethura of knowledge to the table, and am able to critique your weld, in order to make sure you are correctly excuting the skills.",
+        "startDates": "09/02/2019"
+    },
+
+    {
+        "name": "Pasta Making",
+        "category": "cooking",
+        "address": "4309 Westpark Dr.",
+        "duration": 1,
+        "maxGroupSize": 10,
+        "difficulty": "medium",
+        "ratingsAverage": 4.4,
+        "price": 40,
+        "summary": "Make your own pasta from scratch and never buy store brand again.",
+        "description": "Learn to make your own pasta for a delicious experience at the dining table. You will learn about the ingredients and equipment needed (all will be provided in class.)",
+        "startDates": "09/05/2019"
+    },
+
+    {
+        "name": "Book Keeping",
+        "category": "computer science",
+        "address": "6203 Wyoming St.",
+        "duration": 4,
+        "maxGroupSize": 10,
+        "difficulty": "easy",
+        "ratingsAverage": 4.8,
+        "price": 80,
+        "summary": "Basics of bookeeping with QuickBooks.",
+        "description": "This class combines lecture and hands-on instruction to give you tips on how to set up the Quickbooks software in a meaningful way for your business.",
+        "startDates": "09/07/2019"
+    },
+
+    {
+        "name": "The Perfect Steak",
+        "category": "cooking",
+        "address": "1632 Main St.",
+        "duration": 1,
+        "maxGroupSize": 12,
+        "difficulty": "easy",
+        "ratingsAverage": 4.6,
+        "price": 50,
+        "summary": "Cook and eat the perfect steak every time.",
+        "description": "Cooking a steak can sometimes be intimidating. Not with our class. Learn how to cook a steak based on size and cut. A cut of meat will be provided to follow along.",
+        "startDates": "09/07/2019"
+    },
+
+    {
+        "name": "Knife Throwing",
+        "category": "misc",
+        "address": "2700 Lazy Ln.",
+        "duration": 45,
+        "maxGroupSize": 15,
+        "difficulty": "medium",
+        "ratingsAverage": 4.9,
+        "price": 25,
+        "summary": "Become an instant badass with this knife throwing class.",
+        "description": "Here you will be taught how to handle and throw a knife with ease. You'll be hitting your wooden target with procision in no time.",
+        "startDates": "09/09/2019"
+    },
+
+    {
+        "name": "Database Basics",
+        "category": "computer science",
+        "address": "1400 Winding River Rd.",
+        "duration": 15,
+        "maxGroupSize": 5,
+        "difficulty": "hard",
+        "ratingsAverage": 4.7,
+        "price": 98,
+        "summary": "Learn Microsoft Access 2016.",
+        "description": "Join us and learn database management by filtering and retrieving information. Perfect for anyone just starting with this software.",
+        "startDates": "09/10/2019"
+    },
+
+    {
+        "name": "Handgun Cleaning",
+        "category": "misc",
+        "address": "13200 Axe Blvd.",
+        "duration": 45,
+        "maxGroupSize": 20,
+        "difficulty": "easy",
+        "ratingsAverage": 4.6,
+        "price": 20,
+        "summary": "Learn how to properly clean your handgun to keep it lasting a long time.",
+        "description": "Learn how to properly disassemble your gun to clean and lubricate properly. DISCLAIMER: Please come with firearm expelled of all cartridges and magazines. We will not begin until this is done. NO RIFLES, this class is for hand guns only. Rifle cleaning class coming soon.",
+        "startDates": "09/12/2019"
+    },
+
+    {
+        "name": "Horse Riding",
+        "category": "misc",
+        "address": "1593 Eastside Dr.",
+        "duration": 45,
+        "maxGroupSize": 20,
+        "difficulty": "easy",
+        "ratingsAverage": 4.6,
+        "price": 20,
+        "summary": "Learn how to properly clean your handgun to keep it lasting a long time.",
+        "description": "Learn how to properly disassemble your gun to clean and lubricate properly. DISCLAIMER: Please come with firearm expelled of all cartridges and magazines. We will not begin until this is done. NO RIFLES, this class is for hand guns only. Rifle cleaning class coming soon.",
+        "startDates": "09/11/2019"
+    },
+
+    {
+        "name": "Youth 3D Printing",
+        "category": "workshop",
+        "address": "4362 Westheimer Dr.",
+        "duration": 1,
+        "maxGroupSize": 5,
+        "difficulty": "easy",
+        "ratingsAverage": 4.6,
+        "price": 15,
+        "summary": "Kids will learn how to create 3D models.",
+        "description": "3D printing is on the rise and this hands-on workshop is the perfect opportunity for kids between the ages of 10-15 to learn and experiment with it.",
+        "startDates": "09/13/2019"
+    },
+
+    {
+        "name": "Beekeeping",
+        "category": "misc",
+        "address": "5783 Gesture St.",
+        "duration": 1,
+        "maxGroupSize": 3,
+        "difficulty": "easy",
+        "ratingsAverage": 4.5,
+        "price": 20,
+        "summary": "Bee able to handle bees and make your own hive " ,
+        "description": "Bee provided with a bee suit and learn the techniques needed to handle a live hive with care. Honey sampling provided at the end of class.",
+        "startDates": "09/14/2019"
+    },
+
+    {
+        "name": "Junior Firefighter Camp",
+        "category": "workshop",
+        "address": "5783 Water Hose Ln.",
+        "duration": 2,
+        "maxGroupSize": 6,
+        "difficulty": "medium",
+        "ratingsAverage": 4.8,
+        "price": 15,
+        "summary": "Experience what it's like to be a firefighter.",
+        "description": "Each student will get hands-on experience using the equipment that the fire department uses, and will work with professional firefighters.",
+        "startDates": "09/16/2019"
+    },
+
+    {
+        "name": "Decorative Cake Making",
+        "category": "cooking",
+        "address": "4986 Icing Rd.",
+        "duration": 2,
+        "maxGroupSize": 8,
+        "difficulty": "medium",
+        "ratingsAverage": 4.6,
+        "price": 45,
+        "summary": "Take your cake decorating skills to the next level and impress your friends.",
+        "description": "In this class we build upon your baking skills and introduce new techniques to make your cakes stand out. This class will cover frosting and layering. This class is for intermediate bakers that have a good grasp on the basics of cake baking.",
+        "startDates": "09/16/2019"
+    },
+
+    {
+        "name": "Social Media Marketing",
+        "category": "business",
+        "address": "5760 Media Blvd.",
+        "duration": 3,
+        "maxGroupSize": 10,
+        "difficulty": "hard",
+        "ratingsAverage": 4.7,
+        "price": 70,
+        "summary": "Learn about social media marketing.",
+        "description": "Learn how to create content, and establish strategies that effectively communicate with your clients and customers.",
+        "startDates": "09/20/2019"
+    },
+
+    {
+        "name": "PC Building",
+        "category": "computer science",
+        "address": "6789 Tower Rd.",
+        "duration": 1.5,
+        "maxGroupSize": 10,
+        "difficulty": "hard",
+        "ratingsAverage": 4.4,
+        "price": 500,
+        "summary": "Learn to build your own gaming PC.",
+        "description": "PC parts and tower will be provided, and are included in the cost of class. Once you have completed this course, you will have the knowledge on how to upgrade your own PC when you wish!",
+        "startDates": "09/12/2019"
+    },
+
+    {
+        "name": "Drone Flights",
+        "category": "industry",
+        "address": "7833 Pilot St.",
+        "duration": 4,
+        "maxGroupSize": 7,
+        "difficulty": "medium",
+        "ratingsAverage": 4.7,
+        "price": 500,
+        "summary": "Learn to build your own gaming PC.",
+        "description": "PC parts and tower will be provided, and are included in the cost of class. Once you have completed this course, you will have the knowledge on how to upgrade your own PC when you wish!",
+        "startDates": "09/12/2019"
+    },
+
+    {
+        "name": "Carpentry Class",
+        "category": "workshop",
+        "address": "4230 Nail Ln.",
+        "duration": 2,
+        "maxGroupSize": 15,
+        "difficulty": "medium",
+        "ratingsAverage": 4.8,
+        "price": 80,
+        "summary": "Learn to make a wooden chair.",
+        "description": "Learn some basic skills of carpentry and wood work to build a simple wooden chair. The skills learned in this course will be applicable to other projects you create.",
+        "startDates": "09/16/2019"
+    },
+
+    {
+        "name": "Financial Planning",
+        "category": "business",
+        "address": "7839 Money Rd.",
+        "duration": 6,
+        "maxGroupSize": 15,
+        "difficulty": "hard",
+        "ratingsAverage": 4.9,
+        "price": 1000,
+        "summary": "We help you with money management and financial planning to help grow your business into a multibillion dollar company.",
+        "description": "In this course, you will learn about auto insurance, annuities, mutual funds, life insurance and more.",
+        "startDates": "09/26/2019"
+    }
+]

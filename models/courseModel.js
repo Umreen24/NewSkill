@@ -12,12 +12,16 @@ const courseSchema = new mongoose.Schema(
       maxlength: [40, 'A course name must have less or equal than 40 characters'],
       minlength: [5, 'A course name must have more or equal than 10 characters']
     },
-    catagory: {
+    category: {
         type: String,
-        required: [true, 'A course must have a catagory.'],
+        required: [true, 'A course must have a category.'],
         enum: {
             values: ['photography', 'health', 'cooking', 'industry', 'computer science', 'misc', 'workshop', 'horsmanship', 'business'],
           }
+    },
+    address: {
+      type: String,
+      required: [true, 'A course must have an address']
     },
     slug: String,
     duration: {
