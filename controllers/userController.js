@@ -5,17 +5,6 @@ const factory = require('./handlerFactory');
 const sharp = require('sharp');
 const multer = require('multer');
 
-// const multerStorage = multer.diskStorage({
-//   destination:(req,file, cb) =>{
-//     cb(null,'public/img/users');
-//   },
-//   filename: (req, file, cb) =>{
-
-//     const ext = file.min=metype.split('/')[1];
-//     cb(null,`user-${req.user.id}-${Date.now()}.${ext}`);
-//   }
-// });
-
 const multerStorage = multer.memoryStorage();
 
 const multerFilter = (req, file, cb) => {
@@ -89,6 +78,7 @@ exports.updateMe = catchAsync(async (req, res, next) => {
   }
   // 2) Filtered out unwanted field names that are not allowed to be updated
   const filteredBody = filterObj(req.body, 'name', 'email');
+  if (req.file) filteredBody.photo = req.file.filename;
   // 2) Update user document
   const updatedUser = await User.findByIdAndUpdate(req.user.id, filteredBody, {
     new: true,
