@@ -1,6 +1,9 @@
-success_url: `${req.protocol}://${req.get('host')}/?course=${
-    req.params.courseId
-}&users=${req.user.id}$price=${course.price}`
+const catchAsync = require('../utils/catchAsync')
+const factory = require('./handlerFactory')
+
+// success_url: `${req.protocol}://${req.get('host')}/?course=${
+//     req.params.courseId
+// }&users=${req.user.id}$price=${course.price}`
 
 
 
