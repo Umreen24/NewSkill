@@ -9,6 +9,7 @@ const courseSchema = new mongoose.Schema(
       required: [true, 'A course must have a name.'],
       unique: true,
       trim: true,
+<<<<<<< HEAD
       maxlength: [40, 'A course name must have less or equal than 40 characters'],
       minlength: [5, 'A course name must have more or equal than 10 characters']
     },
@@ -18,6 +19,34 @@ const courseSchema = new mongoose.Schema(
         enum: {
             values: ['photography', 'health', 'cooking', 'industry', 'computer science', 'misc', 'workshop', 'horsmanship', 'business'],
           }
+=======
+      maxlength: [
+        40,
+        'A course name must have less or equal than 40 characters'
+      ],
+      minlength: [5, 'A course name must have more or equal than 10 characters']
+    },
+    catagory: {
+      type: String,
+      required: [true, 'A course must have a catagory.'],
+      enum: {
+        values: [
+          'photography',
+          'health',
+          'cooking',
+          'industry',
+          'computer science',
+          'misc',
+          'workshop',
+          'horsmanship',
+          'business'
+        ]
+      }
+    },
+    address: {
+      type: String,
+      required: [true, 'A course must have an address']
+>>>>>>> f1b6d7444324c8191a5db580d61f2ab9becb1f88
     },
     slug: String,
     duration: {
@@ -41,7 +70,14 @@ const courseSchema = new mongoose.Schema(
       default: 4.5,
       min: [1, 'Rating must be above 1.0'],
       max: [5, 'Rating must be below 5.0'],
+<<<<<<< HEAD
       validator: [validator.isAlpha, 'Course name must only contain characters.']
+=======
+      validator: [
+        validator.isAlpha,
+        'Course name must only contain characters.'
+      ]
+>>>>>>> f1b6d7444324c8191a5db580d61f2ab9becb1f88
     },
     ratingsQuantity: {
       type: Number,
@@ -126,4 +162,8 @@ courseSchema.pre('aggregate', function(next) {
 
 const Course = mongoose.model('Course', courseSchema);
 
+<<<<<<< HEAD
 module.exports = Course;
+=======
+module.exports = Course;
+>>>>>>> f1b6d7444324c8191a5db580d61f2ab9becb1f88
