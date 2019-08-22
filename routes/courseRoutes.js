@@ -14,7 +14,7 @@ router
 
 router
   .route("/")
-  .get(authController.protect, courseController.getAllCourses)
+  .get(courseController.getAllCourses)
   .post(courseController.createCourse);
 
 router
