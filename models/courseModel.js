@@ -9,15 +9,28 @@ const courseSchema = new mongoose.Schema(
       required: [true, 'A course must have a name.'],
       unique: true,
       trim: true,
-      maxlength: [40, 'A course name must have less or equal than 40 characters'],
+      maxlength: [
+        40,
+        'A course name must have less or equal than 40 characters'
+      ],
       minlength: [5, 'A course name must have more or equal than 10 characters']
     },
-    category: {
-        type: String,
-        required: [true, 'A course must have a category.'],
-        enum: {
-            values: ['photography', 'health', 'cooking', 'industry', 'computer science', 'misc', 'workshop', 'horsmanship', 'business'],
-          }
+    catagory: {
+      type: String,
+      required: [true, 'A course must have a catagory.'],
+      enum: {
+        values: [
+          'photography',
+          'health',
+          'cooking',
+          'industry',
+          'computer science',
+          'misc',
+          'workshop',
+          'horsmanship',
+          'business'
+        ]
+      }
     },
     address: {
       type: String,
@@ -45,7 +58,10 @@ const courseSchema = new mongoose.Schema(
       default: 4.5,
       min: [1, 'Rating must be above 1.0'],
       max: [5, 'Rating must be below 5.0'],
-      validator: [validator.isAlpha, 'Course name must only contain characters.']
+      validator: [
+        validator.isAlpha,
+        'Course name must only contain characters.'
+      ]
     },
     ratingsQuantity: {
       type: Number,
@@ -111,7 +127,7 @@ courseSchema.pre('save', function(next) {
 courseSchema.pre(/^find/, function(next) {
   // courseSchema.pre('find', function(next) {
   this.find({ secretCourse: { $ne: true } });
-  this.start = Date.now(); 
+  this.start = Date.now();
   next();
 });
 
