@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const path = require('path');
 
 const app = express();
 
@@ -14,6 +15,11 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname,'views'));
+
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Used to get the body info
 app.use(express.json());
 app.use(express.static(`${__dirname}/public`));
@@ -25,6 +31,25 @@ app.use((req, res, next) => {
 });
 
 // 3) ROUTES
+app.get('/', (req,res) => {
+  res.status(200).render("base",{
+    course: "Phil's Photography",
+    user: "Jonas"
+  });
+})
+
+app.get('/overview', (req, res) => {
+  res.status(200).render('overview', {
+    title: 'All Courses'
+  });
+});
+
+app.get('/course', (req, res) => {
+  res.status(200).render('course', {
+    title: "Phil's Photography"
+  });
+});
+
 app.use('/api/v1/courses', courseRouter);
 app.use('/api/v1/users', userRouter);
 
@@ -40,5 +65,6 @@ app.all('*', (req, res, next) => {
 
 // ERROR HANDLING MIDDLEWARE
 app.use(globalErrorHandler);
+
 
 module.exports = app;
