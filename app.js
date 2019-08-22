@@ -8,6 +8,7 @@ const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 const courseRouter = require('./routes/courseRoutes');
 const userRouter = require('./routes/userRoutes');
+const reviewRouter = require('./routes/reviewRoutes');
 
 // 1) MIDDLEWARES
 // used to only console.log dev data when app is ran in dev
@@ -16,7 +17,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 app.set('view engine', 'pug');
-app.set('views', path.join(__dirname,'views'));
+app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -31,12 +32,12 @@ app.use((req, res, next) => {
 });
 
 // 3) ROUTES
-app.get('/', (req,res) => {
-  res.status(200).render("base",{
+app.get('/', (req, res) => {
+  res.status(200).render('base', {
     course: "Phil's Photography",
-    user: "Jonas"
+    user: 'Jonas'
   });
-})
+});
 
 app.get('/overview', (req, res) => {
   res.status(200).render('overview', {
@@ -52,6 +53,7 @@ app.get('/course', (req, res) => {
 
 app.use('/api/v1/courses', courseRouter);
 app.use('/api/v1/users', userRouter);
+app.use('/api/v1/reviews', reviewRouter);
 
 // 404 error for all unhandled routes
 app.all('*', (req, res, next) => {
@@ -65,6 +67,5 @@ app.all('*', (req, res, next) => {
 
 // ERROR HANDLING MIDDLEWARE
 app.use(globalErrorHandler);
-
 
 module.exports = app;
