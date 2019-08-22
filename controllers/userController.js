@@ -33,7 +33,7 @@ const upload = multer({
 
 });
 
-exports.uploadUsersPhoto = upload.single('photo')
+exports.uploadUserPhoto = upload.single('photo')
 
 exports.resizeUserPhoto = catchAsync( async(req, res, next) => {
 if(!req.file) return next();
@@ -51,8 +51,8 @@ next();
 
 });
 
-const filteredBody = filterObj(req.body,'name','email');
-if(req.file) filteredBody.photo =req.file.filename;
+// const filteredBody = filterObj(req.body,'name','email');
+// if(req.file) filteredBody.photo =req.file.filename;
 
 exports.getAllUsers = (req, res) => {
   res.status(500).json({
