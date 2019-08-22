@@ -30,8 +30,9 @@ bookingSchema.pre(/^find/, function(next){
     this.populate('user').populate({
         path: 'course',
         select: 'name'
-    })
-})
+    });
+    next();
+});
 const Booking = mongoose.model('Booking', bookingSchema)
 
 module.exports = Booking;
