@@ -8,6 +8,7 @@ const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 const courseRouter = require('./routes/courseRoutes');
 const userRouter = require('./routes/userRoutes');
+const viewRouter = require('./routes/viewRoutes');
 
 // 1) MIDDLEWARES
 // used to only console.log dev data when app is ran in dev
