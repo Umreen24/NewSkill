@@ -15,7 +15,7 @@ const router = express.Router();
 
 // router.get('/my-course', authController.protect, viewController.getMyTours);
 
-router.get('/', viewController.getOverview);
+router.get('/overview', viewController.getOverview);
 router.get('/course/:slug', viewController.getCourse);
 router.get('/login', viewController.getLoginForm);
 router.get('/me', authController.protect, viewController.getAccount);
