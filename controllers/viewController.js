@@ -3,6 +3,7 @@ const User = require('../models/userModel')
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 
+
 exports.getOverview = catchAsync(async (req, res, next) => {
     const courses = await Course.find();
 

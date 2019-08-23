@@ -1,8 +1,8 @@
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
+const cors = require('cors');
 
-const app = express();
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -10,12 +10,15 @@ const courseRouter = require('./routes/courseRoutes');
 const userRouter = require('./routes/userRoutes');
 const viewRouter = require('./routes/viewRoutes');
 
+const app = express();
 // 1) MIDDLEWARES
 // used to only console.log dev data when app is ran in dev
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
+app.use(cors());
+app.use(express.urlencoded({extended: true}));
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname,'views'));
 
