@@ -18,14 +18,22 @@ router
 router
   .route('/')
   .get(courseController.getAllCourses)
-  .post(courseController.createCourse);
+  .post(
+    authController.protect,
+    authController.restrictTo('admin', 'instructor'),
+    courseController.createCourse
+  );
 
 router
   .route('/:id')
   .get(courseController.getCourse)
-  .patch(courseController.updateCourse, courseController.resizeCourseImages)
-  .delete(courseController.deleteCourse)
-  .patch(courseController.updateCourse)
+  .patch(
+    authController.protect,
+    authController.restrictTo('admin', 'instructor'),
+    courseController.uploadCourseImages,
+    courseController.resizeCourseImages,
+    courseController.updateCourse
+  )
   .delete(
     authController.protect,
     authController.restrictTo('admin', 'instructor'),
