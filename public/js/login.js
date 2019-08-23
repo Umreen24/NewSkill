@@ -1,9 +1,23 @@
-// /* eslint-disable */
+/* eslint-disable */
+
+const hideAlert = () => {
+  const el = document.querySelector('.alert');
+  if (el) el.parentElement.removeChild(el);
+};
+
+//type is either 'success' or 'error'
+const showAlert = (type, msg) => {
+  hideAlert();
+  const markup = `<div class="alert alert--${type}">${msg}</div>`;
+  document.querySelector('body').insertAdjacentHTML('afterbegin', markup);
+  window.setTimeout(hideAlert, 5000);
+};
+
 const login = async (email, password) => {
   try {
     const res = await axios({
       method: 'POST',
-      url: 'http://127.0.0.1:8000/api/v1/users/login',
+      url: 'api/v1/users/login',
       data: {
         email,
         password
@@ -11,19 +25,23 @@ const login = async (email, password) => {
     });
 
     if (res.data.status === 'success') {
-      alert('Logged in successfully');
+      showAlert('success', 'Logged in successfully!');
       window.setTimeout(() => {
-        location.assign('/overview');
+        location.assign('/');
       }, 1500);
     }
   } catch (err) {
-    alert(err);
+    showAlert('error', err.response.data.message);
   }
 };
 
-document.querySelector('.form').addEventListener('submit', e => {
-  e.preventDefault();
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
-  login(email, password);
-});
+const loginForm = document.querySelector('.login-form');
+
+if (loginForm) {
+  loginForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    login(email, password);
+  });
+}

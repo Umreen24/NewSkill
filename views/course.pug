@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 extends base
 include _reviewCard
 
@@ -88,19 +87,3 @@ block content
           button.btn.btn--green.span-all-rows#book-course(data-course-id=`${course.id}`) Book course now!
         else
           a.btn.btn--green.span-all-rows(href='/login') Log in to book course
-=======
-
-block append head
-
-
-
-extends base 
-
-block content 
-    h1 This is the course detail page 
-courseId
-    if user
-    button.btn.btn--green.span-all-rows-book-course(data-tour-id=`${course.id}`) Book course now!
-    else
-    a.btn.btn--green.span-all-rows(href='/login') log in to book course
->>>>>>> master
