@@ -36,7 +36,7 @@ app.use((req, res, next) => {
 
 // 3) ROUTES
 app.get('/', (req, res) => {
-  res.status(200).render('base')
+  res.status(200).render('base');
 });
 
 app.use('/', viewRouter);
@@ -46,12 +46,7 @@ app.use('/api/v1/reviews', reviewRouter);
 
 // 404 error for all unhandled routes
 app.all('*', (req, res, next) => {
-  // const err = new Error(`Can't find ${req.originalUrl} on this server!`);
-  // err.status = 'fail';
-  // err.statusCode = 404;
-  // next(err);
-
-  next(new AppError(`Can't find ${req.originalUrl} on this server!`));
+  next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 });
 
 // ERROR HANDLING MIDDLEWARE
