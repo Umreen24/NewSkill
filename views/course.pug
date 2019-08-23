@@ -1,4 +1,14 @@
 extends base 
 
+block append head
+
+    script(src='https://js.stripe.com/v3/')
 block content 
     h1 This is the course detail page 
+
+
+
+    if user
+        button.btn.btn--blue.span-all-rows#book-course(data-course-id=`${tour.id}`) Book class now!
+    else
+        a.btn.btn--blue.span-all-rows(href='/login') Login in to book class
