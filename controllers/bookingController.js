@@ -15,7 +15,7 @@ exports.getheckoutSession = catchAsync(async(req, res, next) =>{
     success_url: `${req.protocol}://${req.get('host')}/?course=${
             req.params.courseId
     }&user=${req.user.id}$price=${course.price}`,
-    cancel_url: `${req.protocol}://${req.get('host')}/course/${course.slung}`,
+    cancel_url: `${req.protocol}://${req.get('host')}/course/${course.slug}`,
     custumer_email: req.user.email,
     client_reference_id: req.params.courseId,
     line_items: [
