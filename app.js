@@ -9,6 +9,8 @@ const globalErrorHandler = require('./controllers/errorController');
 const courseRouter = require('./routes/courseRoutes');
 const userRouter = require('./routes/userRoutes');
 const viewRouter = require('./routes/viewRoutes');
+const bookingRouter = require('./routes/bookingRoutes');
+
 
 // 1) MIDDLEWARES
 // used to only console.log dev data when app is ran in dev
@@ -53,6 +55,8 @@ app.get('/course', (req, res) => {
 
 app.use('/api/v1/courses', courseRouter);
 app.use('/api/v1/users', userRouter);
+app.use('/api/v1/bookings', bookingRouter);
+
 
 // 404 error for all unhandled routes
 app.all('*', (req, res, next) => {
