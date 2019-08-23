@@ -1,12 +1,12 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const factory = require('./handlerFactory');
-const Booking = require('../models/booksModels');
+const Booking = require('../models/bookingModel');
 const Course = require("./../models/courseModel");
 const catchAsync = require("../utils/catchAsync");
 
 
 
-exports.getheckoutSession = catchAsync(async(req, res, next) =>{
+exports.getCheckoutSession = catchAsync(async(req, res, next) =>{
 
   const course = await Course.findById(req.params.courseId);
 
@@ -57,6 +57,6 @@ exports.getheckoutSession = catchAsync(async(req, res, next) =>{
 
 exports.createBooking = factory.createOne(Booking);
 exports.getBooking = factory.getOne(Booking);
-exports.getAllBooking = factory.getAllBooking(Booking);
+exports.getAllBookings = factory.getAll(Booking);
 exports.updateBooking = factory.updateOne(Booking);
 exports.deleteBooking = factory.deleteOne(Booking);

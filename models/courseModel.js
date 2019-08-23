@@ -15,9 +15,9 @@ const courseSchema = new mongoose.Schema(
       ],
       minlength: [5, 'A course name must have more or equal than 10 characters']
     },
-    catagory: {
+    category: {
       type: String,
-      required: [true, 'A course must have a catagory.'],
+      required: [true, 'A course must have a category.'],
       enum: {
         values: [
           'photography',
@@ -95,7 +95,36 @@ const courseSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
       select: false
-    }
+    },
+    startLocation: {
+      // GeoJSON
+      type: {
+        type: String,
+        default: 'Point',
+        enum: ['Point']
+      },
+      coordinates: [Number],
+      address: String,
+      description: String
+    },
+    locations: [
+      {
+        type: {
+          type: String,
+          default: 'Point',
+          enum: ['Point']
+        },
+        coordinates: [Number],
+        address: String,
+        description: String
+      }
+    ],
+    instructors: [
+      {
+        type: mongoose.Schema.ObjectId,
+        ref: 'User'
+      }
+    ]
   },
   {
     toJSON: { virtuals: true },
@@ -103,8 +132,20 @@ const courseSchema = new mongoose.Schema(
   }
 );
 
+// tourSchema.index({ price: 1 });
+courseSchema.index({ price: 1, ratingsAverage: -1 });
+courseSchema.index({ slug: 1 });
+courseSchema.index({ startLocation: '2dsphere' });
+
 courseSchema.virtual('durationWeeks').get(function() {
   return this.duration / 7;
+});
+
+// Virtual populate
+courseSchema.virtual('reviews', {
+  ref: 'Review',
+  foreignField: 'course',
+  localField: '_id'
 });
 
 // DOCUMENT MIDDLEWARE: runs before .save() and .create()
@@ -113,21 +154,19 @@ courseSchema.pre('save', function(next) {
   next();
 });
 
-// courseSchema.pre('save', function(next) {
-//   console.log('Will save document...');
-//   next();
-// });
-
-// courseSchema.post('save', function(doc, next) {
-//   console.log(doc);
-//   next();
-// });
-
 // QUERY MIDDLEWARE
 courseSchema.pre(/^find/, function(next) {
   // courseSchema.pre('find', function(next) {
   this.find({ secretCourse: { $ne: true } });
   this.start = Date.now();
+  next();
+});
+
+courseSchema.pre(/^find/, function(next) {
+  this.populate({
+    path: 'instructors',
+    select: '-__v -passwordChangedAt'
+  });
   next();
 });
 
