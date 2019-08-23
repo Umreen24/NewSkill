@@ -1,6 +1,6 @@
 const bookingController = require('../controllers/bookingController');
 const express = require('express');
-const viewController = require('../controllers/viewController');
+const viewsController = require('../controllers/viewsController');
 const authController = require('../controllers/authController');
 
 const router = express.Router();
@@ -15,15 +15,15 @@ const router = express.Router();
 
 // router.get('/my-course', authController.protect, viewController.getMyTours);
 
-router.get('/', viewController.getOverview);
-router.get('/course/:slug', viewController.getCourse);
-router.get('/login', viewController.getLoginForm);
-router.get('/me', authController.protect, viewController.getAccount);
+router.get('/', viewsController.getOverview);
+router.get('/course/:slug', viewsController.getCourse);
+router.get('/login', viewsController.getLoginForm);
+router.get('/me', authController.protect, viewsController.getAccount);
 
 router.post(
   '/submit-user-data',
   authController.protect,
-  viewController.updateUserData
+  viewsController.updateUserData
 );
 
 module.exports = router;
