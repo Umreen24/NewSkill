@@ -1,7 +1,6 @@
 const Course = require('./../models/courseModel');
-const APIFeatures = require('../utils/apiFeatures');
 const catchAsync = require('../utils/catchAsync');
-const AppError = require('../utils/appError');
+// const AppError = require('../utils/appError');
 const factory = require('./handlerFactory');
 const multer = require('multer');
 const sharp = require('sharp');
@@ -82,20 +81,8 @@ exports.getAllCourses = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.getCourse = catchAsync(async (req, res, next) => {
-  const course = await Course.findById(req.params.id).populate('reviews');
-
-  if (!course) {
-    return next(new AppError('No course found with that ID', 404));
-  }
-
-  res.status(200).json({
-    data: {
-      course
-    }
-  });
-});
-
+exports.getAllCourses = factory.getAll(Course);
+exports.getCourse = factory.getOne(Course, { path: 'reviews' });
 exports.createCourse = factory.createOne(Course);
 exports.updateCourse = factory.updateOne(Course);
 exports.deleteCourse = factory.deleteOne(Course);
