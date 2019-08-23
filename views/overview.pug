@@ -1,4 +1,41 @@
 extends base
 
 block content 
-    h1 This will list all courses
+    main.main 
+        .card-container 
+
+            each course in courses 
+                .card
+                    .card__header
+                        .card__picture
+                            .card__picture-overlay &nbsp;
+                            img.card__picture-img(src=`img/courses/${course.imageCover}`, alt=`${course.name}`)
+                        h3.heading-tertirary
+                            span= course.name
+
+                    .card__details
+                        h4.card__sub-heading=`${course.difficulty} ${course.duration}-hour class`
+                        p.card__text= course.summary
+                        .card__data
+                            svg.card__icon
+                                use(xlink:href='img/icons.svg#icon-map-pin')
+                            span= course.address
+                        .card__data
+                            svg.card__icon
+                                use(xlink:href='img/icons.svg#icon-calendar')
+                            span= course.startDates[0].toLocaleString('en-us', {month: 'long', day: 'numeric'})
+                        .card__data
+                            svg.card__icon
+                                use(xlink:href='img/icons.svg#icon-user')
+                            span= `${course.maxGroupSize} people max`
+
+                    .card__footer
+                        p
+                            span.card__footer-value= `$${course.price}`
+                            | 
+                            span.card__footer-text per person
+                        p.card__ratings
+                            span.card__footer-value= course.ratingsAverage 
+                            | 
+                            span.card__footer-text= `rating (${course.ratingsQuantity})`
+                        a.btn.btn--green.btn--small(href='/courses/${course.slug}') Details

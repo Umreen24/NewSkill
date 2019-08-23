@@ -34,24 +34,22 @@ app.use((req, res, next) => {
 
 // 3) ROUTES
 app.get('/', (req, res) => {
-  res.status(200).render('base', {
-    course: "Phil's Photography",
-    user: 'Jonas'
-  });
+  res.status(200).render('base')
 });
 
-app.get('/overview', (req, res) => {
-  res.status(200).render('overview', {
-    title: 'All Courses'
-  });
-});
+// app.get('/overview', (req, res) => {
+//   res.status(200).render('overview', {
+//     title: 'All Courses'
+//   });
+// });
 
-app.get('/course', (req, res) => {
-  res.status(200).render('course', {
-    title: "Phil's Photography"
-  });
-});
+// app.get('/course', (req, res) => {
+//   res.status(200).render('course', {
+//     title: "Phil's Photography"
+//   });
+// });
 
+app.use('/', viewRouter);
 app.use('/api/v1/courses', courseRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/reviews', reviewRouter);
