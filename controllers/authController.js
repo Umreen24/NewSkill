@@ -47,21 +47,6 @@ exports.signup = catchAsync(async (req, res, next) => {
   createSendToken(newUser, 201, res);
 });
 
-// exports.signup = catchAsync(async (req, res, next) => {
-//   const newUser = await User.create(req.body);
-//   createSendToken(newUser, 201, res);
-
-
-//   // const token = signToken(newUser._id);
-
-//   // res.status(201).json({
-//   //   status: 'success',
-//   //   token,
-//   //   data: {
-//   //     user: newUser
-//   //   }
-// });
-
 exports.login = catchAsync(async (req, res, next) => {
   const { email, password } = req.body;
 
