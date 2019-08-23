@@ -5,6 +5,8 @@ const authController = require('../controllers/authController');
 
 const router = express.Router();
 
+router.use(authController.isLoggedIn)
+
 //in the root route just (bookingController.createBookingCheckout,) need to be put inside
 // router.get(
 //   '/',
