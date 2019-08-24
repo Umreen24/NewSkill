@@ -43,7 +43,7 @@ body {
   background-color: black;
 }
 
-.main {
+.main-overview {
   background-color: #f7f7f7;
   padding: 8rem 6rem;
   -webkit-box-flex: 1;
@@ -104,7 +104,7 @@ body {
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
 }
 .alert--success {
-  background-color: #20bf6b;
+  background-color: #41B5B6;
 }
 .alert--error {
   background-color: #eb4d4b;
@@ -200,6 +200,8 @@ body {
   /*Add later when we use this for the button in form*/
   border: none;
   cursor: pointer;
+  margin-top: 2.5rem;
+  background-color: #41B5B6;
 }
 
 .btn:hover {
@@ -218,7 +220,7 @@ body {
 
 .btn:focus {
   outline: none;
-  background-color: #2e864b;
+  background-color: #41B5B6;
 }
 
 .btn--white {
@@ -365,10 +367,10 @@ position: relative;
 }
 
 .header-cta:hover {
-  transform: scale(0.2);
-  background-color: #f7f7f7;
-  border: 5px solid #f7f7f7;
-  color: #777;
+  transform: scale(1.5);
+  background-color: rgb(44, 139, 141);
+  color: #eee;
+  box-shadow: -5px 5px 60px 5px #41B5B6;
 }
 
 @keyframes scale-up-center {
@@ -864,8 +866,6 @@ position: relative;
 
 .user-view {
   background-color: #fff;
-  max-width: 120rem;
-  margin: 0 auto;
   min-height: 100vh;
   border-radius: 3px;
   overflow: hidden;
@@ -876,9 +876,9 @@ position: relative;
   display: flex;
 }
 .user-view__menu {
-  -webkit-box-flex: 32rem;
-  -ms-flex: 32rem 0 0px;
-  flex: 32rem 0 0;
+  -webkit-box-flex: 35rem;
+  -ms-flex: 35rem 0 0px;
+  flex: 35rem 0 0;
   background-image: -webkit-gradient(
     linear,
     left top,
@@ -902,7 +902,7 @@ position: relative;
 }
 
 .footer {
-  background-color: #f7f7f7;
+  background-color: black;
   padding: 6rem 4rem 3rem 4rem;
   font-size: 1.4rem;
   display: grid;
@@ -1120,6 +1120,7 @@ position: relative;
 
 .side-nav {
   list-style: none;
+  margin-top: 120px;
 }
 .side-nav li {
   margin: 1rem 0;

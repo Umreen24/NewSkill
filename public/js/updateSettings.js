@@ -2,11 +2,11 @@
 
 const updateMySettings = async (data, type) => {
   try {
-    const url = 
-    type === 'password' ? 
-    'http://127.0.0.1:8000/api/v1/users/updateMyPassword' :
-    'http://127.0.0.1:8000/api/v1/users/updateMe'
-  
+    const url =
+      type === 'password' ?
+        'api/v1/users/updateMyPassword' :
+        'api/v1/users/updateMe'
+
     const res = await axios({
       method: 'PATCH',
       url,
@@ -18,24 +18,24 @@ const updateMySettings = async (data, type) => {
     }
 
   } catch (err) {
-    showAlert('error', err.response.data.message); 
+    showAlert('error', err.response.data.message);
   }
 };
 
 const userDataForm = document.querySelector('.form-user-data')
 
-if(userDataForm) {
+if (userDataForm) {
   userDataForm.addEventListener('submit', e => {
     e.preventDefault();
     const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value; 
-    updateMySettings({name,email}, 'data');
+    const email = document.getElementById('email').value;
+    updateMySettings({ name, email }, 'data');
   });
 }
 
 const userPasswordForm = document.querySelector('.form-user-password')
 
-if(userPasswordForm) {
+if (userPasswordForm) {
   userPasswordForm.addEventListener('submit', async e => {
     e.preventDefault();
     document.querySelector('.btn--save-password').textContent = 'Updating...'
@@ -43,7 +43,7 @@ if(userPasswordForm) {
     const passwordCurrent = document.getElementById('password-current').value;
     const password = document.getElementById('password').value;
     const passwordConfirm = document.getElementById('password-confirm').value;
-    await updateMySettings({passwordCurrent, password, passwordConfirm }, 'password');
+    await updateMySettings({ passwordCurrent, password, passwordConfirm }, 'password');
 
     document.querySelector('.btn--save-password').textContent = 'Save password'
     document.getElementById('password-current').value = '';
