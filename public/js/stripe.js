@@ -1,13 +1,13 @@
-import axios from 'axios';
-import { showAlert } from './alerts';
-const stripe = Stripe('sk_test_mUwY18tilOtl6UL89EcJG8EY00AqzZhm4p');
+// import axios from 'axios';
+// import { showAlert } from './alerts';
+const stripe = Stripe('pk_test_j2VojRNOFamlxFRPLyOYbotJ001r0ryTzu');
 
-export const bookCourse = async courseId => {
+const bookCourse = async courseId => {
   try {
-    //checkout from API
-
-    const session = await axios(`api/v1/bookings/checkout-session/${courseId}`);
-
+    // 1) Get checkout session from API
+    const session = await axios(
+      `/api/v1/bookings/checkout-session/${courseId}`
+    );
     console.log(session);
 
     await stripe.redirectToCheckout({
@@ -19,3 +19,12 @@ export const bookCourse = async courseId => {
     showAlert('error', err);
   }
 };
+
+const bookBtn = document.getElementById('book-course');
+
+if (bookBtn)
+  bookBtn.addEventListener('click', e => {
+    e.target.textContent = 'Processing...';
+    const { courseId } = e.target.dataset;
+    bookCourse(courseId);
+  });
