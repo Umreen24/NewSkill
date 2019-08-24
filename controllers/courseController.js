@@ -1,18 +1,17 @@
 const Course = require('./../models/courseModel');
 const catchAsync = require('../utils/catchAsync');
-// const AppError = require('../utils/appError');
+const AppError = require('../utils/appError');
 const factory = require('./handlerFactory');
 const multer = require('multer');
 const sharp = require('sharp');
 
-//image upload process
-const multerStorage = multer.memoryStorage();
+const multerStorage = multer.memoryStorage()
 
 const multerFilter = (req, file, cb) => {
   if (file.mimetype.startsWith('image')) {
-    cb(null, true);
+    cb(null, true)
   } else {
-    cb(new AppError('Not an image! please upload only images.', 400), false);
+    cb(new AppError('Not an image! Please only upload images.', 400), false);
   }
 };
 
