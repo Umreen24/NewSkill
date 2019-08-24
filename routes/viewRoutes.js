@@ -4,8 +4,6 @@ const viewsController = require('../controllers/viewsController');
 const authController = require('../controllers/authController');
 const router = express.Router();
 
-router.use(authController.isLoggedIn)
-
 //in the root route just (bookingController.createBookingCheckout,) need to be put inside
 // router.get(
 //   '/',
@@ -16,9 +14,9 @@ router.use(authController.isLoggedIn)
 
 // router.get('/my-course', authController.protect, viewController.getMyTours);
 
-router.get('/overview', viewsController.getOverview);
-router.get('/course/:slug', viewsController.getCourse);
-router.get('/login', viewsController.getLoginForm);
+router.get('/overview', authController.isLoggedIn, viewsController.getOverview);
+router.get('/course/:slug', authController.isLoggedIn, viewsController.getCourse);
+router.get('/login', authController.isLoggedIn, viewsController.getLoginForm);
 router.get('/me', authController.protect, viewsController.getAccount);
 
 router.post(
