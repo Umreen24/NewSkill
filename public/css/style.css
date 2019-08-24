@@ -380,6 +380,9 @@ position: relative;
   }
 }
 
+.nav__el--logout {
+  width: 100px;
+}
 
 .btnbtn {
   font-family: Lato;
