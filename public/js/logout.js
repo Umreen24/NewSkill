@@ -9,11 +9,14 @@ if(logoutBtn) {
             method: 'GET',
             url: 'http://127.0.0.1:8000/api/v1/users/logout',
             });
-            if ((res.data.status = 'success')) location.reload(true);
-            console.log('You are logged out');
+            if (res.data.status = 'success') {
+                showAlert('success', 'Logged out succesfully!');
+                window.setTimeout(() => {
+                    location.assign('/');
+                }, 1500);
+            } ;
         } catch (err) {
             showAlert('error', 'Error logging out! Try again.')
-            
         }
     });
 }
