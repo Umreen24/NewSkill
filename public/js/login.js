@@ -17,7 +17,7 @@ const login = async (email, password) => {
   try {
     const res = await axios({
       method: 'POST',
-      url: 'http://127.0.0.1:8000/api/v1/users/login',
+      url: 'api/v1/users/login',
       data: {
         email,
         password
@@ -25,7 +25,7 @@ const login = async (email, password) => {
     });
 
     if (res.data.status === 'success') {
-      showAlert('success','Logged in successfully!');
+      showAlert('success', 'Logged in successfully!');
       window.setTimeout(() => {
         location.assign('/');
       }, 1500);
@@ -37,11 +37,11 @@ const login = async (email, password) => {
 
 const loginForm = document.querySelector('.form--login')
 
-if(loginForm) {
+if (loginForm) {
   loginForm.addEventListener('submit', e => {
     e.preventDefault();
     const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value; 
-    login(email,password);
+    const password = document.getElementById('password').value;
+    login(email, password);
   });
 }

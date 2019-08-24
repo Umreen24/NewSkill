@@ -1,5 +1,4 @@
 
-
 const logoutBtn = document.querySelector('.nav__el--logout')
 
 if(logoutBtn) {
