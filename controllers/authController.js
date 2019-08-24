@@ -63,7 +63,6 @@ exports.login = catchAsync(async (req, res, next) => {
 
   // 3) If everything is ok, send token to client
   createSendToken(user, 200, res);
-  console.log('You are logged in')
 });
 
 exports.logout = (req, res) => {
@@ -77,7 +76,10 @@ exports.logout = (req, res) => {
 exports.protect = catchAsync(async (req, res, next) => {
   // 1) Get token and check if it exists 
   let token;
-  if(req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
+  if(
+    req.headers.authorization && 
+    req.headers.authorization.startsWith('Bearer')
+  ) {
     token = req.headers.authorization.split(' ')[1];
   } else if (req.cookies.jwt) {
     token = req.cookies.jwt;
@@ -92,7 +94,7 @@ exports.protect = catchAsync(async (req, res, next) => {
   // 3) If verfication successful, check if user still exists 
   const currentUser = await User.findById(decoded.id);
   if(!currentUser) {
-    return next(new AppError('The user belonging to this token does no longer exist.', 401))
+    return next(new AppError('The user belonging to this token no longer exists.', 401))
   };
 
   // 4) Check if user changed password after the token was issued
@@ -102,6 +104,7 @@ exports.protect = catchAsync(async (req, res, next) => {
 
   // if there are no problems above, the next function will be performed and grant access to the protected route
   req.user = currentUser;
+  res.locals.user = currentUser;
   next();
 });
 
@@ -137,11 +140,9 @@ exports.isLoggedIn = async (req, res, next) => {
 
 exports.restrictTo = (...roles) => {
   return (req, res, next) => {
-    // roles is an array ['admin', 'instructor']. role='user'
     if(!roles.includes(req.user.role)) {
-      return next(new AppError('You do not have permission to perform this action', 403))
+      return next(new AppError('You do not have permission to perform this action', 403));
     }
-
     next();
   };
 };
@@ -206,15 +207,16 @@ exports.resetPassword = catchAsync(async(req, res, next) => {
   createSendToken(user, 200, res);
 });
 
-exports.updatePassword = catchAsync(async (req, res, next) => {
+exports.updatePassword = catchAsync(async(req, res, next) => {
   const user = await User.findById(req.user.id).select('+password');
-  if (!(await user.correctPassword(req.body.passowrdCurrent,
-    user.password))) {
-      return next(new AppError('Your current password is wrong', 401))
-    };
-  
+
+  if(!(await user.correctPassword(req.body.passwordCurrent, user.password))) {
+    return next(new AppError('Your current password is wrong.', 401));
+  }
+
   user.password = req.body.password;
   user.passwordConfirm = req.body.passwordConfirm;
   await user.save();
+
   createSendToken(user, 200, res);
 });

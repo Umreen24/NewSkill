@@ -27,12 +27,11 @@ app.use(express.static(`${__dirname}/public`));
 
 // Used to get the body info
 app.use(express.json({ limit: '10kb'}));
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({extended: true, limit: '10kb'}));
 app.use(cookieParser());
 
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
-  console.log(req.cookies);
   next();
 });
 
