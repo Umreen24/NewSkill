@@ -7,6 +7,8 @@ html
       link(rel='stylesheet' href='/css/style.css')
       link(rel='shortcut icon' type='image/png' href='/img/favicon.png')
       link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
+      link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap")
+
       title | #{title}
      
 
@@ -16,6 +18,17 @@ html
 
     // CONTENT
     block content
+      header.home-header
+        .clip-path-wrap
+          .clip-path
+      h1.home-heading Learn Something New
+        h3.home-sub-heading Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam enim iusto cumque quidem officia iste saepe facere labore pariatur deserunt, a ut omnis qui ipsam quam at.
+      a.header-cta.btnbtn(href="/overview") Browse Courses
+
+      section.section-about
+        .about-img
+        .about-text
+
 
     // FOOTER
     include _footer
