@@ -27,3 +27,6 @@ if (bookBtn)
     const { courseId } = e.target.dataset;
     bookCourse(courseId);
   });
+
+const alertMessage = document.querySelector('body').dataset.alert;
+if (alertMessage) showAlert('success', alertMessage, 20);
