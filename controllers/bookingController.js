@@ -34,8 +34,6 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
       }
     ]
   });
-  console.log(`session created`);
-
   // 3) Create session as response
   res.status(200).json({
     status: 'success',
@@ -46,14 +44,8 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
 exports.createBookingCheckout = catchAsync(async (req, res, next) => {
   const { course, user, price } = req.query;
 
-  console.log(req.query.course);
-  console.log(req.query.user);
-  console.log(req.query.price);
-
   if (!course && !user && !price) return next();
   await Booking.create({ course, user, price });
-
-  // res.redirect(req.originalUrl.split('?')[0]);
   res.redirect('/my-courses');
 });
 
