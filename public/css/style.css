@@ -1181,6 +1181,27 @@ body {
   margin-right: 2rem;
 }
 
+.course-overview-menu {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+.add-course-btn {
+  position: absolute;
+  top: 0.1%;
+  left: 80%;
+}
+
+.add-course-icon {
+  height: 2rem;
+  width: 2rem;
+  fill: white;
+  top: 26%;
+  position: absolute;
+  left: 83%;
+}
+
 .delete-svg {
   height: 3rem;
   width: 3rem;

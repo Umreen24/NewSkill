@@ -5,6 +5,13 @@ block content
     section.overview-header
 
     main.main-overview 
+        .course-overview-menu
+            if user
+                - if(user.role === 'admin')
+                    a.btn.btn--green.btn--small.add-course-btn(href=`#`) ADD COURSE
+                        svg.card__icon.add-course-icon 
+                            use(xlink:href='img/icons.svg#icon-plus')
+            else    
         .card-container 
 
             each course in courses 
@@ -16,8 +23,14 @@ block content
                                     use(xlink:href=`img/icons.svg#icon-more-vertical`)
                                     .manage-course-menu(id=`${course._id}`)
                                         ul.manage-course-menu-list
-                                            li=`Edit ${course.name} course`
-                                            li=`Delete ${course.name} course`
+                                            li
+                                                =`Edit ${course.name}  `
+                                                svg.card__icon 
+                                                    use(xlink:href='img/icons.svg#icon-edit')
+                                            li
+                                                =`Delete ${course.name} `
+                                                svg.card__icon 
+                                                    use(xlink:href='img/icons.svg#icon-trash-2')
                         else
                         .card__picture
                             .card__picture-overlay &nbsp;
