@@ -12,11 +12,10 @@ const reviewRouter = require('./routes/reviewRoutes');
 const viewRouter = require('./routes/viewRoutes');
 const bookingRouter = require('./routes/bookingRoutes');
 
-
 // 1) MIDDLEWARES
 // used to only console.log dev data when app is ran in dev
 if (process.env.NODE_ENV === 'development') {
-  app.use(morgan('dev'));
+  // app.use(morgan('dev'));
 }
 
 app.set('view engine', 'pug');
@@ -26,8 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(`${__dirname}/public`));
 
 // Used to get the body info
-app.use(express.json({ limit: '10kb'}));
-app.use(express.urlencoded({extended: true, limit: '10kb'}));
+app.use(express.json({ limit: '10kb' }));
+app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 app.use(cookieParser());
 
 app.use((req, res, next) => {

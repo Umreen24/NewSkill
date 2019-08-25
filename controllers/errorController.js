@@ -7,7 +7,6 @@ const handleCastErrorDB = err => {
 
 const handleDuplicateFieldsDB = err => {
   const value = err.errmsg.match(/(["'])(\\?.)*?\1/)[0];
-  console.log(value);
   const message = `Duplicate field value: ${value}. Please use another value!`;
   return new AppError(message, 400);
 };
@@ -18,12 +17,14 @@ const handleValidationErrorDB = err => {
   return new AppError(message, 400);
 };
 
-const handleJWTError = () => new AppError('Invalid token. Please log in again!', 401);
+const handleJWTError = () =>
+  new AppError('Invalid token. Please log in again!', 401);
 
-const handleJWTExpired = () => new AppError('Your token has expired! Please login again!', 401)
+const handleJWTExpired = () =>
+  new AppError('Your token has expired! Please login again!', 401);
 
 const sendErrorDev = (err, req, res) => {
-  if(req.originalUrl.startsWith('/api')) {
+  if (req.originalUrl.startsWith('/api')) {
     res.status(err.statusCode).json({
       status: err.status,
       erroe: err,
@@ -31,25 +32,25 @@ const sendErrorDev = (err, req, res) => {
       stack: err.stack
     });
   }
-    return res.status(err.statusCode).render('error', {
-      title: 'Something went wrong!',
-      msg: err.message
-    });
+  return res.status(err.statusCode).render('error', {
+    title: 'Something went wrong!',
+    msg: err.message
+  });
 };
 
 const sendErrorProd = (err, req, res) => {
-  if(req.originalUrl.startsWith('/api')){
+  if (req.originalUrl.startsWith('/api')) {
     if (err.isOperational) {
       return res.status(err.statusCode).json({
         status: err.status,
         message: err.message
       });
 
-     // Programming or other unknown error: don't leak error details
-    } 
-     // 1) Log error
-      console.log('Error 💥', err);
-     // 2) Send generic message
+      // Programming or other unknown error: don't leak error details
+    }
+    // 1) Log error
+    console.log('Error 💥', err);
+    // 2) Send generic message
     return res.status(500).json({
       status: 'error',
       message: 'Something went very wrong!'
@@ -61,11 +62,11 @@ const sendErrorProd = (err, req, res) => {
       msg: err.message
     });
 
-     // Programming or other unknown error: don't leak error details
-  } 
-     // 1) Log error
-      console.log('Error 💥', err);
-     // 2) Send generic message
+    // Programming or other unknown error: don't leak error details
+  }
+  // 1) Log error
+  console.log('Error 💥', err);
+  // 2) Send generic message
   return res.status(err.statusCode).render('error', {
     title: 'Something went wrong!',
     msg: 'Please try again later.'
