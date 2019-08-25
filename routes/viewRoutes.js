@@ -20,9 +20,16 @@ router.get('/login', authController.isLoggedIn, viewsController.getLoginForm);
 router.get('/me', authController.protect, viewsController.getAccount);
 
 router.get(
-    '/course/:slug', 
-authController.isLoggedIn, 
-viewsController.getCourse);
+  '/manage-courses',
+  authController.restrictTo('admin'),
+  viewsController.getOverview
+);
+
+router.get(
+  '/course/:slug',
+  authController.isLoggedIn,
+  viewsController.getCourse
+);
 
 router.post(
   '/submit-user-data',

@@ -31,6 +31,8 @@ block content
           svg.heading-box__icon
             use(xlink:href='/img/icons.svg#icon-map-pin')
           span.heading-box__text= course.startLocation.description
+          - if(user.role === 'admin')
+            button DELETE
 
   section.section-description
     .overview-box
