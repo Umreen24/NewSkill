@@ -17,3 +17,16 @@
 // form.append('photo', document.getElementById('photo').files[0]);
 
 // updateSetting(form, 'data');
+
+let manageCourseMenu = document.querySelectorAll('.delete-svg');
+let manageCourseMenuList = document.querySelectorAll('.manage-course-menu');
+
+if (manageCourseMenu) {
+  manageCourseMenu.forEach(menu => {
+    // menu.addEventListener('click', showManageMenu);
+  });
+}
+
+// function showManageMenu() {
+//   manageCourseMenuList.style.display = 'block';
+// }

@@ -10,6 +10,15 @@ block content
             each course in courses 
                 .card
                     .card__header
+                        if user
+                            - if(user.role === 'admin')
+                                svg.delete-svg
+                                    use(xlink:href=`img/icons.svg#icon-more-vertical`)
+                                    .manage-course-menu
+                                        ul.manage-course-menu-list
+                                            li=`Edit ${course.name} course`
+                                            li=`Delete ${course.name} course`
+                        else
                         .card__picture
                             .card__picture-overlay &nbsp;
                             img.card__picture-img(src=`img/courses/${course.imageCover}`, alt=`${course.name}`)
@@ -41,4 +50,5 @@ block content
                             span.card__footer-value= course.ratingsAverage 
                             | 
                             span.card__footer-text= `rating (${course.ratingsQuantity})`
+
                         a.btn.btn--green.btn--small(href=`/course/${course.slug}`) Details
