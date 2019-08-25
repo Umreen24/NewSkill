@@ -1199,7 +1199,7 @@ body {
 }
 
 .delete-svg:active {
-  background-color: rgba(236, 236, 236, 0.692);
+  background-color: rgba(255, 255, 255, 0.692);
   border-radius: 50%;
 }
 
@@ -1218,11 +1218,15 @@ body {
 .manage-course-menu li {
   padding: 8px;
   list-style: none;
-  transition: all 0.2s;
+  transition: all 0.1s;
 }
 
-.manage-course-menu:target {
-  background-color: red;
+.manage-course-menu li:hover {
+  background-color: rgb(201, 201, 201);
+}
+
+.manage-course-menu li:active {
+  background-color: rgb(224, 224, 224);
 }
 
 .admin-nav {
