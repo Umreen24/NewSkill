@@ -18,15 +18,22 @@
 
 // updateSetting(form, 'data');
 
-let manageCourseMenu = document.querySelectorAll('.delete-svg');
-let manageCourseMenuList = document.querySelectorAll('.manage-course-menu');
+let manageCourseBtn = document.querySelectorAll('.delete-svg');
+let manageCourseMenu = document.querySelectorAll('.manage-course-menu');
 
-if (manageCourseMenu) {
-  manageCourseMenu.forEach(menu => {
-    // menu.addEventListener('click', showManageMenu);
+if (manageCourseBtn) {
+  manageCourseBtn.forEach(btn => {
+    // 1) Add event listener on each manage button
+    btn.addEventListener('click', function() {
+      // 2) Make the button show it's corresponding menu
+      showManageMenu(this);
+    });
   });
 }
 
-// function showManageMenu() {
-//   manageCourseMenuList.style.display = 'block';
-// }
+function showManageMenu(manageCourseBtn) {
+  let menuId = manageCourseBtn.dataset.menuid;
+  let menu = document.getElementById(menuId);
+  if (menu.style.display == 'none') menu.style.display = 'block';
+  else menu.style.display = 'none';
+}
