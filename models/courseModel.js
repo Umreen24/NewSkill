@@ -171,15 +171,13 @@ courseSchema.pre(/^find/, function(next) {
 });
 
 courseSchema.post(/^find/, function(docs, next) {
-  console.log(`Query took ${Date.now() - this.start} millliseconds!`);
-  console.log(docs);
+  // console.log(`Query took ${Date.now() - this.start} millliseconds!`);
   next();
 });
 
 // AGGREGATION MIDDLEWARE
 courseSchema.pre('aggregate', function(next) {
   this.pipeline().unshift({ $match: { secretCourse: { $ne: true } } });
-  console.log(this.pipeline());
   next();
 });
 

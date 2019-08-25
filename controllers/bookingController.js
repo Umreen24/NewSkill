@@ -46,7 +46,8 @@ exports.createBookingCheckout = catchAsync(async (req, res, next) => {
   if (!course && !user && !price) return next();
   await Booking.create({ course, user, price });
 
-  res.redirect(req.originalUrl.split('?')[0]);
+  // res.redirect(req.originalUrl.split('?')[0]);
+  res.redirect('/my-courses');
 });
 
 // const course = session.client_reference_id;
