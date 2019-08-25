@@ -6,11 +6,13 @@ const catchAsync = require('../utils/catchAsync');
 const factory = require('./handlerFactory');
 
 exports.getCheckoutSession = catchAsync(async (req, res, next) => {
+  // 1) Get the currently booked course
   const course = await Course.findById(req.params.courseId);
+  console.log(course);
 
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
-    success_url: `${req.protocol}://${req.get('host')}?course=${
+    success_url: `${req.protocol}://${req.get('host')}/checkout/?course=${
       req.params.courseId
     }&user=${req.user.id}&price=${course.price}`,
     cancel_url: `${req.protocol}://${req.get('host')}/course/${course.slug}`,
@@ -32,6 +34,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
       }
     ]
   });
+  console.log(`session created`);
 
   // 3) Create session as response
   res.status(200).json({
@@ -42,6 +45,10 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
 
 exports.createBookingCheckout = catchAsync(async (req, res, next) => {
   const { course, user, price } = req.query;
+
+  console.log(req.query.course);
+  console.log(req.query.user);
+  console.log(req.query.price);
 
   if (!course && !user && !price) return next();
   await Booking.create({ course, user, price });

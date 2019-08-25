@@ -6,7 +6,7 @@ const router = express.Router();
 
 //in the root route just (bookingController.createBookingCheckout,) need to be put inside
 router.get(
-  '/',
+  '/checkout',
   bookingController.createBookingCheckout,
   authController.isLoggedIn,
   viewsController.getOverview
