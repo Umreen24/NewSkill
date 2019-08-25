@@ -132,7 +132,7 @@ const courseSchema = new mongoose.Schema(
   }
 );
 
-// tourSchema.index({ price: 1 });
+// course.index({ price: 1 });
 courseSchema.index({ price: 1, ratingsAverage: -1 });
 courseSchema.index({ slug: 1 });
 courseSchema.index({ startLocation: '2dsphere' });
