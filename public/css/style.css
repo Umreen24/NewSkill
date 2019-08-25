@@ -874,7 +874,7 @@ body {
 .user-view__menu {
   -webkit-box-flex: 35rem;
   -ms-flex: 35rem 0 0px;
-  flex: 35rem 0 0;
+  flex: 38rem 0 0;
   background-image: -webkit-gradient(
     linear,
     left top,
@@ -1189,6 +1189,10 @@ body {
   border-bottom: 1px solid currentColor;
 }
 
+.admin-nav-list {
+  margin-top: 10px;
+}
+
 .card-container {
   max-width: 120rem;
   margin: 0 auto;
@@ -1339,6 +1343,22 @@ body {
   font-weight: 700;
   max-width: 50rem;
   margin: 0 auto;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  widows: 100%;
+  z-index: -1;
+  opacity: .5;
+}
+
+.bg-video__content {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .login-form {
