@@ -13,11 +13,8 @@ exports.alerts = (req, res, next) => {
 };
 
 exports.getOverview = catchAsync(async (req, res, next) => {
-  // 1) Get course data from collection
   const courses = await Course.find();
 
-  // 2) Build template
-  // 3) Render that template using course data from 1)
   res.status(200).render('overview', {
     title: 'All Courses',
     courses
@@ -25,7 +22,6 @@ exports.getOverview = catchAsync(async (req, res, next) => {
 });
 
 exports.getCourse = catchAsync(async (req, res, next) => {
-  // 1) Get the data, for the requested course (including reviews and guides)
   const course = await Course.findOne({ slug: req.params.slug }).populate({
     path: 'reviews',
     fields: 'review rating user'
@@ -35,13 +31,17 @@ exports.getCourse = catchAsync(async (req, res, next) => {
     return next(new AppError('There is no course with that name.', 404));
   }
 
-  // 2) Build template
-  // 3) Render template using data from 1)
   res.status(200).render('course', {
     title: `${course.name} Course`,
     course
   });
 });
+
+exports.getSignUpForm = (req, res) => {
+  res.status(200).render('signup', {
+    title: 'Register an account'
+  });
+};
 
 exports.getLoginForm = (req, res) => {
   res.status(200).render('login', {

@@ -5,18 +5,7 @@ const factory = require('./handlerFactory');
 const multer = require('multer')
 const sharp = require('sharp');
 
-// const multerStorage = multer.diskStorage({
-//   destination: (req, file, cb) => {
-//     cb(null, 'public/img/users');
-//   },
-//   filename: (req, file, cb) => {
-//     const ext = file.mimetype.split('/')[1];
-//     cb(null, `user-${req.user.id}-${Date.now()}.${ext}`);
-//   }
-// });
-
 const multerStorage = multer.memoryStorage()
-
 const multerFilter = (req, file, cb) => {
   if (file.mimetype.startsWith('image')) {
     cb(null, true)
@@ -90,14 +79,14 @@ exports.deleteMe = catchAsync(async(req, res, next) => {
   });
 });
 
-exports.getAllUsers = factory.getAll(User);
-exports.getUser = factory.getOne(User);
-exports.updateUser = factory.updateOne(User);
-exports.deleteUser = factory.deleteOne(User);
-
 exports.createUser = (req, res) => {
   res.status(500).json({
     status: 'error',
     message: 'This route is not yet defined!'
   });
 };
+
+exports.getAllUsers = factory.getAll(User);
+exports.getUser = factory.getOne(User);
+exports.updateUser = factory.updateOne(User);
+exports.deleteUser = factory.deleteOne(User);
