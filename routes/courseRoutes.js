@@ -7,8 +7,6 @@ const courseController = require('../controllers/courseController');
 const authController = require('../controllers/authController');
 const reviewRouter = require('./../routes/reviewRoutes');
 
-// router.param('id', courseController.checkID);
-
 router.use('/:courseId/reviews', reviewRouter);
 
 router
