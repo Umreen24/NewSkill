@@ -26,11 +26,11 @@ block content
         .heading-box__detail
           svg.heading-box__icon
             use(xlink:href='/img/icons.svg#icon-clock')
-          span.heading-box__text= `${course.duration} days`
+          span.heading-box__text= `${course.duration} Hours`
         .heading-box__detail
           svg.heading-box__icon
             use(xlink:href='/img/icons.svg#icon-map-pin')
-          span.heading-box__text= course.startLocation.description
+          span.heading-box__text= course.address
           if user
               - if(user.role === 'admin')
                   svg.delete-svg
@@ -52,8 +52,8 @@ block content
           +overviewBox('Participants', `${course.maxGroupSize} people`, 'user')
           +overviewBox('Rating', `${course.ratingsAverage} / 5`, 'star')
 
-        .overview-box__group
-          h2.heading-secondary.ma-bt-lg Your course instructor
+        //- .overview-box__group
+        //-   h2.heading-secondary.ma-bt-lg Your course instructor
         //-   each instructor in course.instructor
         //-     .overview-box__detail
         //-       img.overview-box__img(src=`/img/users/${instructor.photo}`, alt=`${instructor.name}`)
@@ -71,7 +71,7 @@ block content
   section.section-pictures
     each img, i in course.images
       .picture-box
-        img.picture-box__img(src=`/img/courses/${img}`, alt=`The Park Camper Course ${i + 1}`, class=`picture-box__img--${i + 1}`)
+        img.picture-box__img(src=`/img/courses/${img}`, alt=`Courses ${i + 1}`, class=`picture-box__img--${i + 1}`)
 
   section.section-map
     #map(data-locations=`${JSON.stringify(course.locations)}`)
@@ -89,7 +89,7 @@ block content
       img.cta__img.cta__img--2(src=`/img/courses/${course.images[2]}`, alt='Course picture')
       .cta__content
         h2.heading-secondary What are you waiting for?
-        p.cta__text= `${course.duration} days. 1 adventure. Infinite memories. Make it yours today!`
+        p.cta__text= `Book now, and get started to learn something new today!`
         
         if user
           button.btn.btn--green.span-all-rows#book-course(data-course-id=`${course.id}`) Book course now!
