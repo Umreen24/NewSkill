@@ -1,4 +1,3 @@
-
 const stripe = Stripe('pk_test_j2VojRNOFamlxFRPLyOYbotJ001r0ryTzu');
 
 const bookCourse = async courseId => {
@@ -20,6 +19,7 @@ const bookBtn = document.getElementById('book-course');
 
 if (bookBtn)
   bookBtn.addEventListener('click', e => {
+    console.log(`hey`);
     e.target.textContent = 'Processing...';
     const { courseId } = e.target.dataset;
     bookCourse(courseId);
