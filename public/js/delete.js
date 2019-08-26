@@ -1,5 +1,5 @@
 const deleteCourse = async id => {
-  console.log(id);
+  // console.log(id);
   try {
     const res = await axios({
       method: 'DELETE',
@@ -11,13 +11,13 @@ const deleteCourse = async id => {
   }
 };
 
-const deleteCourseBtn = document.querySelectorAll('.delete-course-btn');
+const deleteCourseBtn = document.querySelector('.deleteCourse');
 
-// if (deleteCourseBtn) {
-//   deleteCourseBtn.forEach(btn => {
-//     btn.addEventListener('click', deleteCourse);
-//   });
-// }
+if (deleteCourseBtn) {
+  deleteCourseBtn.forEach(btn => {
+    btn.addEventListener('click', deleteCourse);
+  });
+}
 
 // function thisfunction() {
 //   console.log(`hey`);

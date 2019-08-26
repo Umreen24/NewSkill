@@ -27,7 +27,7 @@ block content
                                                 =`Edit ${course.name}  `
                                                 svg.card__icon 
                                                     use(xlink:href='img/icons.svg#icon-edit')
-                                            li(onclick=`deleteCourse(${course.id})`)
+                                            li((click)=`deleteCourse(${course.id})`)
                                                 .delete-course-btn=`Delete ${course.name} `
 
                                                 svg.card__icon 
