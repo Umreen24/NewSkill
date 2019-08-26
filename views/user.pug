@@ -1,0 +1,37 @@
+extends base 
+
+mixin navItem(link, text, icon, active)
+    li(class=`${active ? 'side-nav--active' : ''}`)
+        a(href=`${link}`)
+            svg
+                use(xlink:href=`img/icons.svg#icon-${icon}`)
+            | #{text} 
+
+block content
+    main.main
+    .user-view
+        nav.user-view__menu
+            ul.side-nav
+                +navItem('#', 'Settings', 'settings', true)
+                +navItem('/my-courses', 'My Bookings', 'briefcase')
+                +navItem('#', 'My Reviews', 'star')
+                +navItem('#', 'Billing', 'credit-card')
+                if user && user.role === 'admin'
+                    .admin-nav
+                        h5.admin-nav__heading Admin
+                        ul.side-nav.admin-nav-list
+                            +navItem('/overview', 'Manage Courses', 'map')
+                            +navItem('/manage-users', 'Manage Users', 'users')
+                            +navItem('#', 'Manage Reviews', 'star')
+                            +navItem('#', 'Manage Bookings', 'briefcase')
+        .user-view__content
+            .nav-bar
+            .user-view__form-container
+
+                each user in users
+                    ul
+                        li
+                            img.form__user-photo(src=`/img/users/${user.photo}` alt=`Photo of ${user.name}`)
+                            span= `${user.name}`
+                            span  Deactivate User
+                            span= user.role

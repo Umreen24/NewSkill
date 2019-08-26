@@ -431,6 +431,12 @@ body {
   right: 36%;
 }
 
+@media (max-width: 56.25em) {
+  .featured-course span {
+    right: 6%;
+  }
+}
+
 @media (min-width: 112.5em) {
   .featured-course span {
     top: 20%;
@@ -1049,7 +1055,18 @@ body {
 
 .nav-bar {
   height: 80px;
-  width: 200%;
+  width: 80.2%;
+  /* flex: 38rem 0 0; */
+  background-color: black;
+  background-image: linear-gradient(rgb(26, 26, 26), black);
+  position: absolute;
+  top: 0%;
+}
+
+.login-nav-bar {
+  height: 80px;
+  width: 100%;
+  /* flex: 38rem 0 0; */
   background-color: black;
   background-image: linear-gradient(rgb(26, 26, 26), black);
   position: absolute;
@@ -1132,6 +1149,14 @@ body {
 @media only screen and (max-width: 50em) {
   .footer__copyright {
     justify-self: center;
+  }
+}
+
+@media (max-width: 56.25em) {
+  .footer__nav-right {
+    justify-self: end;
+    width: 10px;
+    margin-top: 80px;
   }
 }
 
@@ -1356,6 +1381,12 @@ body {
   }
 }
 
+@media (max-width: 56.25em) {
+  .add-course-btn {
+    left: 55%;
+  }
+}
+
 .add-course-icon {
   height: 2rem;
   width: 2rem;
@@ -1388,13 +1419,13 @@ body {
 }
 
 .manage-course-menu {
-  width: 180px;
+  width: 230px;
   position: absolute;
   top: 20%;
   z-index: 100;
   background-color: #eee;
   font-size: 13px;
-  left: 45%;
+  left: 25%;
   cursor: pointer;
   display: none;
 }
@@ -1435,6 +1466,14 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 7rem;
+}
+
+@media (max-width: 56.25em) {
+  .card-container {
+    max-width: 50rem;
+    margin: 0 15px;
+    grid-template-columns: none;
+  }
 }
 
 .card {

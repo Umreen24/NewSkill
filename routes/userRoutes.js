@@ -11,20 +11,31 @@ userRouter.post('/login', authController.login);
 userRouter.post('/forgotPassword', authController.forgotPassword);
 userRouter.patch('/resetPassword', authController.resetPassword);
 
-userRouter.patch('/updateMyPassword', authController.protect, authController.updatePassword);
+userRouter.patch(
+  '/updateMyPassword',
+  authController.protect,
+  authController.updatePassword
+);
 
-userRouter.get('/me', authController.protect, userController.getMe, userController.getUser);
+userRouter.get(
+  '/me',
+  authController.protect,
+  userController.getMe,
+  userController.getUser
+);
 
-userRouter.patch('/updateMe',
-authController.protect,
-userController.uploadUserPhoto, 
-userController.resizeUserPhoto,
-userController.updateMe);
+userRouter.patch(
+  '/updateMe',
+  authController.protect,
+  userController.uploadUserPhoto,
+  userController.resizeUserPhoto,
+  userController.updateMe
+);
 
 userRouter.delete('/deleteMe', authController.protect, userController.deleteMe);
 
 userRouter
-  .route('/') 
+  .route('/')
   .get(userController.getAllUsers)
   .post(userController.createUser);
 
