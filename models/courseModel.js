@@ -28,7 +28,8 @@ const courseSchema = new mongoose.Schema(
           'misc',
           'workshop',
           'horsmanship',
-          'business'
+          'business',
+          'adventure'
         ]
       }
     },

@@ -31,7 +31,7 @@ router
     authController.protect,
     authController.restrictTo('admin', 'instructor'),
     courseController.uploadCourseImages,
-    courseController.resizeCourseImages,
+    // courseController.resizeCourseImages,
     courseController.updateCourse
   )
   .delete(

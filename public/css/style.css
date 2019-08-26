@@ -398,7 +398,44 @@ body {
 
 .overview-header {
   height: 75vh;
-  background-color: black;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(65, 181, 182, 0.2),
+      rgba(13, 64, 65, 0.2)
+    ),
+    url(../img/courses/course-9-cover.jpg);
+  /* background-image: url(../img/courses/course-9-cover.jpg); */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.overview-heading {
+  font-size: 30px;
+  color: white;
+  top: 54%;
+  position: absolute;
+  left: 8%;
+  font-weight: 500;
+}
+
+.featured-course {
+  position: absolute;
+  top: 63%;
+  left: 10%;
+}
+
+.featured-course span {
+  position: absolute;
+  top: 62%;
+  right: 36%;
+}
+
+@media (min-width: 112.5em) {
+  .featured-course span {
+    top: 20%;
+    right: 70%;
+  }
 }
 
 .header {
@@ -534,17 +571,127 @@ body {
 .section-about {
   height: 150vh;
   width: auto;
-  background-color: rgb(14, 14, 14);
+  background-color: rgb(0, 0, 0);
+  /* background-color: #eee; */
+}
+
+.about-heading {
+  font-size: 50px;
+  margin-top: 200px;
+  text-align: center;
+  color: white;
+  font-weight: 500;
+}
+
+.composition-section {
   display: flex;
 }
 
 .about-img {
-  /* background-color: red; */
-  height: 100%;
+  height: 450px;
   width: 60%;
+  margin-top: 120px;
+  margin-left: 90px;
+}
+
+.composition {
+  position: relative;
+}
+
+.composition__photo {
+  width: 55%;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+  /* border-radius: 2px; */
+  position: absolute;
+  z-index: 10;
+  transition: all 0.2s;
+  outline-offset: 2rem;
+}
+
+.composition__photo--p1 {
+  left: 0;
+  top: -2rem;
+}
+.composition__photo--p2 {
+  right: 0;
+  top: 2rem;
+}
+.composition__photo--p3 {
+  left: 20%;
+  top: 10rem;
+}
+
+.composition__photo:hover {
+  outline: 1.5rem solid #41b5b6;
+  transform: scale(1.05) translateY(-0.5rem);
+  box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+  z-index: 20;
+}
+.composition:hover .composition__photo:not(:hover) {
+  transform: scale(0.95);
 }
 
 .about-text {
+  width: 500px;
+  /* position: absolute; */
+  /* left: 70%;
+  top: 90%; */
+}
+
+.home-text {
+  font-size: 20px;
+  width: 550px;
+  color: white;
+  z-index: 10;
+  margin-left: 800px;
+}
+
+@media only screen and (max-width: 50em) {
+  .home-text {
+    font-size: 35px;
+    width: 850px;
+    top: 2400px;
+    left: 1350px;
+  }
+}
+
+.deals {
+  height: 70vh;
+  display: flex;
+  margin-top: 150px;
+}
+
+.deals-text {
+  margin-left: 100px;
+}
+
+.deals img {
+  height: 100%;
+  width: auto;
+  margin-left: 150px;
+  animation: moveInRight 1s ease-out;
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.footer-cta {
+  height: 50vh;
+}
+
+.footer-btn {
+  position: relative;
 }
 
 .section-description {
@@ -1203,6 +1350,12 @@ body {
   left: 80%;
 }
 
+@media (min-width: 112.5em) {
+  .add-course-btn {
+    left: 70%;
+  }
+}
+
 .add-course-icon {
   height: 2rem;
   width: 2rem;
@@ -1434,8 +1587,9 @@ body {
   left: 0;
   height: 100%;
   widows: 100%;
-  z-index: -1;
-  opacity: 0.5;
+  /* z-index: ; */
+  opacity: 0.2;
+  background-image: linear-gradient(to right bottom, #41b5b6, #0d4041);
 }
 
 .bg-video__content {
