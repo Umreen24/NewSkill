@@ -16,13 +16,12 @@ block content
                 +navItem('/my-courses', 'My Bookings', 'briefcase')
                 +navItem('#', 'My Reviews', 'star')
                 +navItem('#', 'Billing', 'credit-card')
-
-                - if(user.role === 'admin')
+                if user && user.role === 'admin'
                     .admin-nav
                         h5.admin-nav__heading Admin
                         ul.side-nav.admin-nav-list
                             +navItem('/overview', 'Manage Courses', 'map')
-                            +navItem('#', 'Manage Users', 'users')
+                            +navItem('/manage-users', 'Manage Users', 'users')
                             +navItem('#', 'Manage Reviews', 'star')
                             +navItem('#', 'Manage Bookings', 'briefcase')
   

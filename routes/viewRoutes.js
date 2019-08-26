@@ -17,12 +17,18 @@ router.get('/my-courses', authController.protect, viewsController.getMyCourses);
 router.get('/overview', authController.isLoggedIn, viewsController.getOverview);
 router.get('/signup', viewsController.getSignUpForm);
 router.get('/login', authController.isLoggedIn, viewsController.getLoginForm);
-router.get('/me', authController.protect, viewsController.getAccount);
+router.get('/settings', authController.protect, viewsController.getAccount);
 
 router.get(
   '/manage-courses',
   authController.restrictTo('admin'),
   viewsController.getOverview
+);
+
+router.get(
+  '/manage-users',
+  // authController.restrictTo('admin'),
+  viewsController.getAllUsers
 );
 
 router.get(

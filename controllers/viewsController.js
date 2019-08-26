@@ -3,6 +3,7 @@ const User = require('../models/userModel');
 const Booking = require('../models/bookingModel');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
+const factory = require('./handlerFactory');
 
 exports.alerts = (req, res, next) => {
   const { alert } = req.query;
@@ -85,5 +86,38 @@ exports.updateUserData = catchAsync(async (req, res, next) => {
   res.status(200).render('account', {
     title: 'Your account',
     user: updatedUser
+  });
+});
+
+// exports.getAllUsers = factory.getAll(User);
+
+// exports.getAll = User =>
+//   catchAsync(async (req, res, next) => {
+//     // To allow for nested GET reviews on course (hack)
+//     let filter = {};
+//     if (req.params.courseId) filter = { course: req.params.courseId };
+
+//     const features = new APIFeatures(User.find(filter), req.query)
+//       .filter()
+//       .sort()
+//       .limitFields()
+//       .paginate();
+//     // const doc = await features.query.explain();
+//     const doc = await features.query;
+
+//     // SEND RESPONSE
+//     res.status(200).render('account', {
+//       title: 'Your account',
+//       user: updatedUser
+//     });
+//   });
+
+exports.getAllUsers = catchAsync(async (req, res, next) => {
+  const users = await User.find();
+
+  // SEND RESPONSE
+  res.status(200).render('user', {
+    title: 'Manage',
+    users
   });
 });
