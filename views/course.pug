@@ -40,6 +40,10 @@ block content
                               li=`Edit ${course.name} course`
                               li=`Delete ${course.name} course`
           else
+    if user
+      button.btn.btn--green.span-all-rows#book-course(data-course-id=`${course.id}`) Book course now!
+    else
+      a.btn.btn--green.span-all-rows(href='/login') Log in to book course
   section.section-description
     .overview-box
       div
@@ -52,15 +56,15 @@ block content
           +overviewBox('Participants', `${course.maxGroupSize} people`, 'user')
           +overviewBox('Rating', `${course.ratingsAverage} / 5`, 'star')
 
-        //- .overview-box__group
-        //-   h2.heading-secondary.ma-bt-lg Your course instructor
-        //-   each instructor in course.instructor
-        //-     .overview-box__detail
-        //-       img.overview-box__img(src=`/img/users/${instructor.photo}`, alt=`${instructor.name}`)
+        .overview-box__group
+          h2.heading-secondary.ma-bt-lg Your course instructor
+          each instructor in course.instructors
+            .overview-box__detail
+              img.overview-box__img(src=`/img/users/${instructor.photo}`, alt=`${instructor.name}`)
 
-        //-       - if (instructor.role === 'instructor')
-        //-         span.overview-box__label Course instructor
-        //-       span.overview-box__text= instructor.name
+              - if (instructor.role === 'instructor')
+                span.overview-box__label Course instructor
+              span.overview-box__text= instructor.name
 
     .description-box
       h2.heading-secondary.ma-bt-lg= `About ${course.name} course`

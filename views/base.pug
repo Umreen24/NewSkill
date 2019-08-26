@@ -12,7 +12,7 @@ html
       link(href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet")
 
 
-      title | #{title}
+      title NewSkill | #{title} Learn Something New
      
 
   body
@@ -29,9 +29,22 @@ html
       a.header-cta.btnbtn(href="/overview") Browse Courses
 
       section.section-about
-        .about-img
+        h1.about-heading SOME HEADER HERE
+        .composition-section
+          .about-img
+            .composition
+                img(src="img/courses/course-9-3.jpg" alt="Photo 1" class="composition__photo composition__photo--p1")
+                img(src="img/courses/course-2-2.jpg" alt="Photo 2" class="composition__photo composition__photo--p2")
+                img(src="img/courses/course-22-cover.jpg" alt="Photo 3" class="composition__photo composition__photo--p3")
         .about-text
+          p.home-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus natus impedit officia, vel quod pariatur, corrupti voluptas eos illum animi facilis autem deleniti quam tenetur dicta asperiores harum accusamus perferendis!
 
+      section.deals
+        p.home-text.deals-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus natus impedit officia, vel quod pariatur. quam tenetur dicta asperiores harum accusamus perferendis!
+        img(src="img/course-card.png" alt="course deal")
+
+      section.footer-cta
+        a.header-cta.btnbtn.footer-btn(href="/overview") Browse Courses
 
     // FOOTER
     include _footer
