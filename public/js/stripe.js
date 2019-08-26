@@ -1,5 +1,4 @@
-// import axios from 'axios';
-// import { showAlert } from './alerts';
+
 const stripe = Stripe('pk_test_j2VojRNOFamlxFRPLyOYbotJ001r0ryTzu');
 
 const bookCourse = async courseId => {

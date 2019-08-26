@@ -7,6 +7,7 @@ const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean')
 const hpp = require('hpp')
+const compression = require('compression');
 // const morgan = require('morgan');
 
 const AppError = require('./utils/appError');
@@ -57,6 +58,8 @@ app.use(hpp({
     'price'
   ]
 }));
+
+app.use(compression());
 
 // SERVING STATIC FILES 
 app.use(express.static(path.join(__dirname, 'public')));
