@@ -308,7 +308,7 @@ body {
 }
 
 .clip-path-wrap {
-  filter: drop-shadow(0 1rem 2rem rgba(0, 0, 0, 0.2));
+  /* filter: drop-shadow(0 1rem 2rem rgba(0, 0, 0, 0.2)); */
   height: 100%;
 }
 
@@ -532,9 +532,19 @@ body {
 }
 
 .section-about {
-  height: 85vh;
+  height: 150vh;
   width: auto;
   background-color: rgb(14, 14, 14);
+  display: flex;
+}
+
+.about-img {
+  /* background-color: red; */
+  height: 100%;
+  width: 60%;
+}
+
+.about-text {
 }
 
 .section-description {
