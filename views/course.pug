@@ -4,7 +4,6 @@ include _reviewCard
 block append head
   script(src='https://api.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js')
   link(href='https://api.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.css' rel='stylesheet')
-  script(src='https://js.stripe.com/v3/')
 
 mixin overviewBox(label, text, icon)
   .overview-box__detail
@@ -31,19 +30,6 @@ block content
           svg.heading-box__icon
             use(xlink:href='/img/icons.svg#icon-map-pin')
           span.heading-box__text= course.address
-          if user
-              - if(user.role === 'admin')
-                  svg.delete-svg
-                      use(xlink:href=`img/icons.svg#icon-more-vertical`)
-                      .manage-course-menu
-                          ul.manage-course-menu-list
-                              li=`Edit ${course.name} course`
-                              li=`Delete ${course.name} course`
-          else
-    if user
-      button.btn.btn--green.span-all-rows#book-course(data-course-id=`${course.id}`) Book course now!
-    else
-      a.btn.btn--green.span-all-rows(href='/login') Log in to book course
   section.section-description
     .overview-box
       div
