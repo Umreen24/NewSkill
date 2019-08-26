@@ -278,5 +278,37 @@
         "summary": "We help you with money management and financial planning to help grow your business into a multibillion dollar company.",
         "description": "In this course, you will learn about auto insurance, annuities, mutual funds, life insurance and more.",
         "startDates": "09/26/2019"
+    },
+
+    {
+        "startLocation": {
+            "description": "Houston, USA",
+            "type": "Point",
+            "coordinates": [29.716131, -95.388718],
+            "address": "6001 Fannin St, Houston, TX 77030, USA"
+          },
+          "ratingsAverage": 4.7,
+          "ratingsQuantity": 10,
+          "images": ["course-20-1.jpg", "course-20-2.jpg", "course-20-3.jpg"],
+          "startDates": [
+            "2021-06-19T09:00:00.000Z"
+          ],
+          "_id": "5d61b38b396c38af40f5cfeb",
+          "name": "Piano Lessons",
+          "duration": 7,
+          "maxGroupSize": 15,
+          "difficulty": "medium",
+          "price": 110,
+          "summary": "Learn to play a timeless instrument with ease while learning some tips and tricks.",
+          "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+          "imageCover": "course-20-cover.jpg",
+          "locations": {
+              "_id": "5d61b38b396c38af40f5cfeb",
+              "description": "Hermann Park Lake Plaza",
+              "type": "Point",
+              "coordinates": [29.7165, 95.3901],
+              "day": 1
+        }
     }
+
 ]

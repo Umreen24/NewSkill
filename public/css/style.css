@@ -110,6 +110,10 @@ body {
   background-color: #eb4d4b;
 }
 
+.delete-btn {
+  /* position: absolute; */
+}
+
 .heading-secondary {
   font-size: 2.25rem;
   text-transform: uppercase;
@@ -304,7 +308,7 @@ body {
 }
 
 .clip-path-wrap {
-  filter: drop-shadow(0 1rem 2rem rgba(0, 0, 0, 0.2));
+  /* filter: drop-shadow(0 1rem 2rem rgba(0, 0, 0, 0.2)); */
   height: 100%;
 }
 
@@ -528,9 +532,19 @@ body {
 }
 
 .section-about {
-  height: 85vh;
+  height: 150vh;
   width: auto;
   background-color: rgb(14, 14, 14);
+  display: flex;
+}
+
+.about-img {
+  /* background-color: red; */
+  height: 100%;
+  width: 60%;
+}
+
+.about-text {
 }
 
 .section-description {
@@ -1177,6 +1191,75 @@ body {
   margin-right: 2rem;
 }
 
+.course-overview-menu {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+.add-course-btn {
+  position: absolute;
+  top: 0.1%;
+  left: 80%;
+}
+
+.add-course-icon {
+  height: 2rem;
+  width: 2rem;
+  fill: white;
+  top: 26%;
+  position: absolute;
+  left: 83%;
+}
+
+.delete-svg {
+  height: 3rem;
+  width: 3rem;
+  margin-right: 2rem;
+  fill: white;
+  position: absolute;
+  z-index: 99;
+  left: 90%;
+  top: 4%;
+  transition: all 0.2s;
+}
+
+.delete-svg:hover {
+  background-color: rgba(247, 247, 247, 0.445);
+  border-radius: 50%;
+}
+
+.delete-svg:active {
+  background-color: rgba(255, 255, 255, 0.692);
+  border-radius: 50%;
+}
+
+.manage-course-menu {
+  width: 180px;
+  position: absolute;
+  top: 20%;
+  z-index: 100;
+  background-color: #eee;
+  font-size: 13px;
+  left: 45%;
+  cursor: pointer;
+  display: none;
+}
+
+.manage-course-menu li {
+  padding: 8px;
+  list-style: none;
+  transition: all 0.1s;
+}
+
+.manage-course-menu li:hover {
+  background-color: rgb(201, 201, 201);
+}
+
+.manage-course-menu li:active {
+  background-color: rgb(224, 224, 224);
+}
+
 .admin-nav {
   margin-top: 5.5rem;
 }
@@ -1352,7 +1435,7 @@ body {
   height: 100%;
   widows: 100%;
   z-index: -1;
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .bg-video__content {
