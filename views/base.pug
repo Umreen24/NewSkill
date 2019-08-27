@@ -13,7 +13,7 @@ html
       title NewSkill | #{title} Learn Something New
      
 
-  body
+  body(data-alert=`${alert ? alert : ''}`)
     // HEADER
     include _header
 

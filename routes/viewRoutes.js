@@ -4,6 +4,8 @@ const viewsController = require('../controllers/viewsController');
 const authController = require('../controllers/authController');
 const router = express.Router();
 
+router.use(viewsController.alerts);
+
 //in the root route just (bookingController.createBookingCheckout,) need to be put inside
 router.get(
   '/checkout',

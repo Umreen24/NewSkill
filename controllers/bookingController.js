@@ -13,7 +13,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
     payment_method_types: ['card'],
     success_url: `${req.protocol}://${req.get('host')}/checkout/?course=${
       req.params.courseId
-    }&user=${req.user.id}&price=${course.price}`,
+    }&user=${req.user.id}&price=${course.price}&alert=booking`,
     cancel_url: `${req.protocol}://${req.get('host')}/course/${course.slug}`,
     customer_email: req.user.email,
     client_reference_id: req.params.courseId,
@@ -23,10 +23,6 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
         description: course.summary,
         images: [
           `https://newskillsite.herokuapp.com//img/courses/${course.imageCover}`
-          // `${req.protocol}://${req.get('host')}/img/courses/${
-          //   course.imageCover
-          // }`
-          // 'https://wepushbuttons.com.au/wp-content/uploads/2012/03/twitter-logo-small.jpg'
         ],
         amount: course.price * 100,
         currency: 'usd',
