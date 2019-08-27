@@ -171,10 +171,10 @@ courseSchema.pre(/^find/, function(next) {
   next();
 });
 
-courseSchema.post(/^find/, function(docs, next) {
-  // console.log(`Query took ${Date.now() - this.start} millliseconds!`);
-  next();
-});
+// courseSchema.post(/^find/, function(docs, next) {
+//   console.log(`Query took ${Date.now() - this.start} millliseconds!`);
+//   next();
+// });
 
 // AGGREGATION MIDDLEWARE
 courseSchema.pre('aggregate', function(next) {
