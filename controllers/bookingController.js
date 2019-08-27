@@ -22,10 +22,11 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
         name: `${course.name} Course`,
         description: course.summary,
         images: [
+          `https://newskillsite.herokuapp.com//img/courses/${course.imageCover}`
           // `${req.protocol}://${req.get('host')}/img/courses/${
           //   course.imageCover
           // }`
-          'https://wepushbuttons.com.au/wp-content/uploads/2012/03/twitter-logo-small.jpg'
+          // 'https://wepushbuttons.com.au/wp-content/uploads/2012/03/twitter-logo-small.jpg'
         ],
         amount: course.price * 100,
         currency: 'usd',
