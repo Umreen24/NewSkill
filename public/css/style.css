@@ -331,6 +331,12 @@ body {
   text-decoration: none;
 }
 
+@media (max-width: 56.25em) {
+  .co-name {
+    font-size: 4rem;
+  }
+}
+
 .home-heading {
   font-family: Lato;
   position: absolute;
@@ -433,7 +439,8 @@ body {
 
 @media (max-width: 56.25em) {
   .featured-course span {
-    right: 6%;
+    font-size: 33px;
+    right: 30%;
   }
 }
 
@@ -1425,7 +1432,7 @@ body {
   z-index: 100;
   background-color: #eee;
   font-size: 13px;
-  left: 25%;
+  left: 30%;
   cursor: pointer;
   display: none;
 }
