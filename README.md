@@ -52,7 +52,7 @@ password: test1234
 The database used for this project was MongoDB with the ODM (Object Data Modeling) library, Mongoose.
 
 <h2> Programs & API Used </h2> 
-JavaScript, Node.js, HTML, CSS, Pug, and Mapbox API. 
+JavaScript, Node.js, Express, HTML, CSS, Pug, Stripe API, and Mapbox API. 
 
 <h2> Team Members </h2>
 This application was created by <a href='https://github.com/taliaa10'>Taliaa Tauatolo</a>, 
