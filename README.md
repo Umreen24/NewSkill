@@ -2,11 +2,6 @@
 
 <img src='homepage.png'></img>
 
-<h2> Live Link to Site </h2> 
-https://newskillsite.herokuapp.com/
-
-<br/>
-
 <h2> About NewSkill </h2>
 
 <b>NewSkill's purpose</b>: The purpose of NewSkill is to provide individuals an easy to use site that contains a variety of 
@@ -45,6 +40,9 @@ Our team has also made our application information accessible as an API (https:/
 
 <h2> Booking a Course </h2> 
 <img src='book-course-gif.gif' width='700' height='450'></img>
+
+<h2> Live Link to Site </h2> 
+https://newskillsite.herokuapp.com/
 
 <h2> Admin Login Credentials </h2>
 username: admin@newskill.io |
