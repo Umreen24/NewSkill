@@ -2,6 +2,13 @@
 
 <img src='homepage.png'></img>
 
+<h2> Live Link to Site </h2> 
+https://newskillsite.herokuapp.com/
+
+<br/>
+
+<h2> About NewSkill </h2>
+
 <b>NewSkill's purpose</b>: The purpose of NewSkill is to provide individuals an easy to use site that contains a variety of 
 different classes available for registration and booking. The classes listed are held at different locations around 
 Houston, TX and offer in-person instruction for an individual to learn and develop a new skill. The site is designed 
@@ -20,12 +27,9 @@ courses they have booked through the user portal. Logging in as an admin allows 
 courses, reviews, and bookings. 
 
 <b>NewSkill's features</b>: The website is featured with a creative and modern design with featured courses changing every 
-other week, and offers quick facts about each course offered before going to the "Course Details" page. The site differentiates
-between logging in, registration, and offers security for the user by creating an encrypted password when they register, 
-and sends them a JWT once logged in. Only users who are logged in are able to book a course and update their settings. 
-
-<h2> Live Link to Site </h2> 
-https://newskillsite.herokuapp.com/
+other week, and offers quick facts about each course offered before going to the "Course Details" page. The site differentiates between logging in, registration, and offers security for the user by creating an 
+encrypted password when they register, and sends them a JWT once logged in. Only users who are logged in are able to book a course and update their settings. 
+Our team has also made our application information accessible as an API (https://newskillsite.herokuapp.com/api/v1/courses). 
 
 <h2> Browsing Courses </h2> 
 <img src='browse-course-gif.gif' width='700' height='450' ></img>
