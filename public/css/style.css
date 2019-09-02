@@ -151,12 +151,6 @@ body {
   font-weight: 300;
 }
 
-@media (max-width: 56.25em) {
-  .heading-primary {
-    font-size: 2rem;
-  }
-}
-
 .heading-primary span,
 .heading-tertirary span {
   padding: 1rem 1.5rem;
@@ -179,6 +173,12 @@ body {
   text-align: center;
   width: 70%;
   margin: 0 auto;
+}
+
+@media (max-width: 56.25em) {
+  .heading-primary {
+    font-size: 2rem;
+  }
 }
 
 .heading-tertirary {
@@ -330,7 +330,7 @@ body {
   font-family: Lato;
   position: absolute;
   top: 0%;
-  left: 4%;
+  left: 1%;
   font-size: 6rem;
   color: white;
   font-weight: 100;
@@ -515,7 +515,7 @@ body {
 
 @media (max-width: 56.25em) {
   .section-header {
-    height: 68vw;
+    height: 80vw;
   }
 }
 
@@ -555,6 +555,13 @@ body {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
+@media (max-width: 56.25em) {
+  .heading-box {
+    top: 45%;
+  }
+}
+
 .heading-box__group {
   color: #f7f7f7;
   margin-top: 3rem;
@@ -568,6 +575,13 @@ body {
   -ms-flex-pack: center;
   justify-content: center;
 }
+
+@media (max-width: 56.25em) {
+  .heading-box__group {
+    flex-direction: column;
+  }
+}
+
 .heading-box__detail {
   font-size: 1.5rem;
   font-weight: 700;
@@ -1088,9 +1102,9 @@ body {
   display: flex;
 }
 .user-view__menu {
-  -webkit-box-flex: 35rem;
-  -ms-flex: 35rem 0 0px;
-  flex: 38rem 0 0;
+  -webkit-box-flex: 28.5rem;
+  -ms-flex: 28.5rem 0 0px;
+  flex: 28.5rem 0 0;
   background-image: -webkit-gradient(
     linear,
     left top,
