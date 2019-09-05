@@ -1,24 +1,21 @@
 const deleteCourse = async id => {
-  // console.log(id);
+  let courseID = id.path[0].id;
   try {
-    const res = await axios({
+    await axios({
       method: 'DELETE',
-      url: `/api/v1/courses/:id`,
+      url: `/api/v1/courses/${courseID}`,
       data: null
     });
+    location.assign('/overview');
   } catch (err) {
     showAlert('error', err);
   }
 };
 
-const deleteCourseBtn = document.querySelector('.deleteCourse');
+const deleteCourseBtn = document.querySelectorAll('.delete-course-btn');
 
 if (deleteCourseBtn) {
   deleteCourseBtn.forEach(btn => {
     btn.addEventListener('click', deleteCourse);
   });
 }
-
-// function thisfunction() {
-//   console.log(`hey`);
-// }

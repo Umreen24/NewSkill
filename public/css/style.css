@@ -416,7 +416,7 @@ body {
       rgba(65, 181, 182, 0.2),
       rgba(13, 64, 65, 0.2)
     ),
-    url(../img/courses/course-9-cover.jpg);
+    url(../img/courses/course-22-cover.jpg);
   /* background-image: url(../img/courses/course-9-cover.jpg); */
   background-size: cover;
   background-position: center;
@@ -441,7 +441,7 @@ body {
 .featured-course span {
   position: absolute;
   top: 62%;
-  right: 36%;
+  right: 56%;
 }
 
 @media (max-width: 56.25em) {

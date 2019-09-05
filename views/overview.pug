@@ -5,7 +5,7 @@ block content
     section.overview-header
         h1.overview-heading FEATURED COURSE
         h1.heading-primary.featured-course
-            span HORSEBACK RIDING
+            span HANGLIDING
 
     main.main-overview 
         .course-overview-menu
@@ -27,8 +27,7 @@ block content
                                                 =`Edit ${course.name}  `
                                                 svg.card__icon 
                                                     use(xlink:href='img/icons.svg#icon-edit')
-                                            li((click)=`deleteCourse(${course.id})`)
-                                                .delete-course-btn=`Delete ${course.name} `
+                                            li(id=`${course._id}`,(click)=`deleteCourse(${course._id})`).delete-course-btn=`Delete ${course.name} `
 
                                                     svg.card__icon 
                                                         use(xlink:href='img/icons.svg#icon-trash-2')
